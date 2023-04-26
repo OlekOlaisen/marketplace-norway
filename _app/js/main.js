@@ -1,3 +1,3 @@
-import Dropdown from "./modules/dropdown.js";
+import NewAd from "./modules/new-ad.js";
 
-Dropdown();
+NewAd();

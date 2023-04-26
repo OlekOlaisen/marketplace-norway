@@ -1,0 +1,16 @@
+button {
+	display: flex;
+	flex-flow: column;
+	font-size: 2rem;
+	padding: 1rem 2rem;
+	background-color: transparent;
+	outline: none;
+	border: none;
+}
+
+.main__buttons {
+	display: flex;
+	flex-flow: row;
+	justify-content: space-evenly;
+	margin: 5rem;
+}
