@@ -9,12 +9,12 @@
 .header__title {
 	font-size: 1.3rem;
 	color: #000;
-	background-color: lightblue;
 	padding: 1rem 2rem;
+	text-decoration: none;
 }
 
 .header__title:hover {
-	outline: 2px solid black;
+	border-bottom: 2px solid black;
 }
 
 
