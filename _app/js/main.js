@@ -1,3 +1,5 @@
-import NewAd from "./modules/new-ad.js";
 
-NewAd();
+import Listings from "./modules/listings.js";
+
+
+Listings();

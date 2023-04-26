@@ -1,0 +1,29 @@
+.main__listings-grid-container {
+  display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+   grid-gap: 2rem;
+   margin: 2rem;
+   margin-top: 6rem;
+}
+
+.main__listings-grid-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  padding: 1rem;
+}
+
+.main__listings-grid-item img {
+  width: 100%;
+  height: auto;
+  margin-bottom: 1rem;
+}
+
+.main__listings-grid-item p {
+  margin: 0;
+  font-size: 1rem;
+}

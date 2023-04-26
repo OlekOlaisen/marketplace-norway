@@ -1,24 +1,23 @@
 export default function NewAd() {
+	const marketButton = document.querySelector('#market');
+	const jobsButton = document.querySelector('#jobs');
+	const propertyButton = document.querySelector('#property');
+	const mainForm = document.querySelector('#main__form');
 	
-	const button1 = document.querySelector('#market');
-	const button2 = document.querySelector('#jobs');
-	const button3 = document.querySelector('#property');
-	const display = document.querySelector('#main__form');
-	
-	button1.addEventListener('click', () => {
+	marketButton.addEventListener('click', () => {
 		updateContent(getMarketForm());
 	});
 	
-	button2.addEventListener('click', () => {
+	jobsButton.addEventListener('click', () => {
 		updateContent(getJobsForm());
 	});
 	
-	button3.addEventListener('click', () => {
+	propertyButton.addEventListener('click', () => {
 		updateContent(getPropertyForm());
 	});
 	
 	function updateContent(content) {
-		display.innerHTML = content;
+		mainForm.innerHTML = content;
 	}
 	
 	function getMarketForm() {
@@ -95,4 +94,6 @@ export default function NewAd() {
 		`;
 		return propertyForm;
 	}
+
+	
 }
