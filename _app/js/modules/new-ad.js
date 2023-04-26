@@ -1,9 +1,9 @@
 export default function NewAd() {
 	
-	const button1 = document.getElementById('market');
-	const button2 = document.getElementById('jobs');
-	const button3 = document.getElementById('property');
-	const display = document.getElementById('main__form');
+	const button1 = document.querySelector('#market');
+	const button2 = document.querySelector('#jobs');
+	const button3 = document.querySelector('#property');
+	const display = document.querySelector('#main__form');
 	
 	button1.addEventListener('click', () => {
 		updateContent(getMarketForm());
@@ -96,4 +96,3 @@ export default function NewAd() {
 		return propertyForm;
 	}
 }
-
