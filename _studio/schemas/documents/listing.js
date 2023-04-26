@@ -19,6 +19,11 @@ export default {
          type: 'reference',
          to: { type: 'category' }
       },
+      {  
+         title: 'City',
+         name: 'city',
+         type: 'string',
+      },
       
       {
          title: 'Price',

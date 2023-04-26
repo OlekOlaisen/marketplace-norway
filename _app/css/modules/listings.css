@@ -27,3 +27,7 @@
   margin: 0;
   font-size: 1rem;
 }
+
+.main__listings-results-price {
+	text-transform: uppercase;
+}

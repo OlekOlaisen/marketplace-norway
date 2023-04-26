@@ -13,6 +13,7 @@ export default async function Listings() {
 			'image': image.asset->url,
 			'title': name,
 			'price': price,
+			'city': city
 		}`;
 		listings = await sanity.fetch(query);
 	}
@@ -22,25 +23,30 @@ export default async function Listings() {
   gridContainer.className = 'main__listings-grid-container';
 
   for (const listing of listings) {
-    const gridItem = document.createElement('div');
-    const listingTitle = document.createElement('p');
-    const listingImage = document.createElement('img');
-    const listingPrice = document.createElement('p');
+  const gridItem = document.createElement('div');
+  const listingTitle = document.createElement('p');
+  const listingImage = document.createElement('img');
+  const listingPrice = document.createElement('p');
+  const listingCity = document.createElement('p');
 
-    gridItem.className = 'main__listings-grid-item';
-    listingTitle.className = 'main__listings-results-title';
-    listingImage.className = 'main__listings-results-image';
-    listingPrice.className = 'main__listings-results-price';
+  gridItem.className = 'main__listings-grid-item';
+  listingTitle.className = 'main__listings-results-title';
+  listingImage.className = 'main__listings-results-image';
+  listingPrice.className = 'main__listings-results-price';
+  listingCity.className = 'main__listings-results-city';
 
-    listingTitle.innerText = listing.title;
-    listingImage.src = listing.image;
-    listingPrice.innerText = listing.price;
+  listingTitle.innerText = listing.title;
+  listingImage.src = listing.image;
+  listingPrice.innerText = `${listing.price.number} ${listing.price.currency}`;
+  listingCity.innerText = listing.city;
 
-    gridItem.appendChild(listingImage);
-    gridItem.appendChild(listingTitle);
-    gridItem.appendChild(listingPrice);
-    gridContainer.appendChild(gridItem);
-  }
+  gridItem.appendChild(listingImage);
+  gridItem.appendChild(listingTitle);
+  gridItem.appendChild(listingPrice);
+  gridItem.appendChild(listingCity);
+  gridContainer.appendChild(gridItem);
+}
+
 
   return gridContainer;
 }
