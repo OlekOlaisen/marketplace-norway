@@ -17,11 +17,12 @@ button {
 	display: flex;
 	flex-flow: row;
 	justify-content: space-evenly;
-	margin: 5rem;
+	margin: 3rem auto;
 }
 
 form {
 	display: flex;
 	flex-flow: column;
 	align-items: center;
+	
 }

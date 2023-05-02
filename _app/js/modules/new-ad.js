@@ -57,14 +57,11 @@ export default function NewAd() {
 			<label for="description">Description:</label>
 			<textarea id="description" name="description" required></textarea>
 			
-			<label for="price">Price:</label>
-			<input type="number" id="price" name="price" required>
-			
 			<label for="location">Location:</label>
 			<input type="text" id="location" name="location" required>
-			
-			<label for="image">Image:</label>
-			<input type="file" id="image" name="image" accept="image/*">
+
+			<label for="date">Deadline:</label>
+			<input type="date" id="date" name="date" required>
 			
 			<button type="submit">Submit</button>
 			</form>
