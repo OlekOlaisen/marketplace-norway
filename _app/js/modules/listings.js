@@ -47,8 +47,11 @@ export default async function Listings() {
       listingPrice.innerText = `${listing.price.number} ${listing.price.currency}`;
       listingCity.innerText = listing.city;
 
-      if (favorites.some((fav) => fav.title === listing.title)) {
-        favoriteButton.classList.add('bi-heart-fill');
+      if (favorites.some((favorite) => favorite.title === listing.title)) {
+        favoriteButton.className = 'main__listings-grid-item-favorite bi bi-heart-fill';
+      }
+      else {
+        favoriteButton.className = 'main__listings-grid-item-favorite bi bi-heart';
       }
 
       gridItem.appendChild(listingImage);
@@ -64,9 +67,11 @@ export default async function Listings() {
       favoriteButton.addEventListener('click', () => {
         if (favoriteButton.classList.contains('bi-heart-fill')) {
           favoriteButton.classList.remove('bi-heart-fill');
+          favoriteButton.classList.add('bi-heart');
           removeFavorite(listing);
         } else {
           favoriteButton.classList.add('bi-heart-fill');
+          favoriteButton.classList.remove('bi-heart');
           addFavorite(listing);
         }
       });
@@ -83,7 +88,6 @@ export default async function Listings() {
     renderFavorites();
   }
 
-  
   
   
   function renderListings() {

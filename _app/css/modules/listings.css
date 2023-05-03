@@ -1,16 +1,15 @@
 .main__listings-grid-container {
-  display: grid;
+display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-  grid-gap: 2rem;
+  gap: 2rem;
   margin: 2rem;
   margin-top: 6rem;
 }
 
 .main__listings-grid-item {
-  display: flex;
+display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   background-color: #fff;
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -66,11 +65,4 @@
     bottom: 0.5rem;
     right: 0.5rem;
     color: #dc3545;
-}
-
-
-
-.bi-heart:hover:before {
-  content: "\F415";
-  color: #dc3545;
 }

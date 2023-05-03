@@ -9,8 +9,7 @@
 .main__favorites-item {
    display: flex;
    flex-direction: column;
-   align-items: center;
-   
+   align-items: center; 
    background-color: #fff;
    border-radius: 0.5rem;
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
@@ -21,6 +20,13 @@
 
 .main__favorites-item:hover {
    transform: scale(1.03);
+}
+
+.main__favorites-empty {
+   font-family: var(--font-large);
+   text-align: center;
+   font-size: 2rem;
+   margin: 4rem;
 }
 
 .main__favorites-item-image {
@@ -52,17 +58,7 @@
    text-align: center;
 }
 
-.main__favorites-item>.bi-heart {
-   font-size: 1rem;
-   position: absolute;
-   bottom: 0.5rem;
-   right: 0.5rem;
-}
 
-.bi-heart:hover:before {
-   content: "\F415";
-   color: #dc3545;
-}
 
 .bi-x {
    font-size: 1.4rem;
