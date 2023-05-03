@@ -1,5 +1,6 @@
 import {sanity} from '../sanity.js';
 
+
 export default async function Listings() {
   
   
@@ -24,19 +25,22 @@ export default async function Listings() {
     
     for (const listing of listings) {
       const gridItem = document.createElement('div');
+      const listingDetails = document.createElement('div');
       const listingTitle = document.createElement('p');
       const listingImage = document.createElement('img');
       const listingPrice = document.createElement('p');
       const listingCity = document.createElement('p');
       const favoriteButton = document.createElement('button');
+
       
       
       gridItem.className = 'main__listings-grid-item';
-      listingTitle.className = 'main__listings-results-title';
-      listingImage.className = 'main__listings-results-image';
-      listingPrice.className = 'main__listings-results-price';
-      listingCity.className = 'main__listings-results-city';
-      favoriteButton.className = 'main__listings-results-favorite bi bi-heart';
+      listingDetails.className = 'main__listings-grid-item-details';
+      listingTitle.className = 'main__listings-grid-item-title';
+      listingImage.className = 'main__listings-grid-item-image';
+      listingPrice.className = 'main__listings-grid-item-price';
+      listingCity.className = 'main__listings-grid-item-city';
+      favoriteButton.className = 'main__listings-grid-item-favorite bi bi-heart';
       
       listingTitle.innerText = listing.title;
       listingImage.src = listing.image;
@@ -45,11 +49,18 @@ export default async function Listings() {
       
       
       gridItem.appendChild(listingImage);
-      gridItem.appendChild(listingTitle);
-      gridItem.appendChild(listingPrice);
-      gridItem.appendChild(listingCity);
+      gridItem.appendChild(listingDetails);
       gridItem.appendChild(favoriteButton);
+
+      listingDetails.appendChild(listingCity);
+      listingDetails.appendChild(listingTitle);
+      listingDetails.appendChild(listingPrice);
+      
       gridContainer.appendChild(gridItem);
+
+      favoriteButton.addEventListener('click', () => {
+        addFavorite(listing);
+      });
     }
     
     
@@ -63,6 +74,14 @@ export default async function Listings() {
     listingList.innerHTML = '';
     listingList.appendChild(listContainer);
   }
+
+  function addFavorite(listing) {
+    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+    favorites.push(listing);
+    localStorage.setItem('favorites', JSON.stringify(favorites));
+    renderFavorites();
+  }
+
   
   await fetchListings();
   renderListings();

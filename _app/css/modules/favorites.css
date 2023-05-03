@@ -1,0 +1,78 @@
+.main__favorites-list {
+   display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+   gap: 2rem;
+   margin: 2rem;
+   margin-top: 6rem;
+}
+
+.main__favorites-item {
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   background-color: #fff;
+   border-radius: 0.5rem;
+   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+   padding: 0 0 1rem 0;
+   position: relative;
+   transition: ease 100ms;
+}
+
+.main__favorites-item:hover {
+   transform: scale(1.1);
+}
+
+.main__favorites-item-image {
+   width: 100%;
+   height: 150px;
+   object-fit: cover;
+   border-radius: 0.5rem;
+}
+
+.main__favorites-item-details {
+   width: 100%;
+}
+
+.main__favorites-item-city {
+   color: grey;
+   font-size: var(--font-size-small);
+   text-align: end;
+   margin: 0.1rem;
+}
+
+.main__favorites-item-title {
+   font-size: var(--font-size-large);
+   text-align: center;
+}
+
+.main__favorites-item-price {
+   text-transform: uppercase;
+   font-size: var(--font-size-base);
+   text-align: center;
+}
+
+.main__favorites-item>.bi-heart {
+   font-size: 1rem;
+   position: absolute;
+   bottom: 0.5rem;
+   right: 0.5rem;
+}
+
+.bi-heart:hover:before {
+   content: "\F415";
+   color: #dc3545;
+}
+
+.bi-x {
+   font-size: 1.4rem;
+   color: white;
+   position: absolute;
+   top: 0;
+   right: 0;
+   cursor: pointer;
+}
+
+.bi-x:hover {
+   
+}

@@ -1,6 +1,8 @@
-import NewAd from "./modules/new-ad.js";
+
 import Listings from "./modules/listings.js";
+import Favorites from "./modules/favorites.js";
 
 
 Listings();
-NewAd();
+
+Favorites();
