@@ -1,16 +1,10 @@
-button {
+.icons {
 	display: flex;
 	flex-flow: column;
-	font-size: 1rem;
 	padding: 1rem 2rem;
-	background-color: transparent;
-	outline: none;
-	border: none;
-}
-
-.icons {
 	color: var(--color-primary);
 	font-size: 3rem;
+	
 }
 
 .main__buttons {
@@ -20,9 +14,12 @@ button {
 	margin: 3rem auto;
 }
 
+.main__buttons-button {
+	font-family: var(--font-base);
+}
+
 form {
 	display: flex;
 	flex-flow: column;
-	align-items: center;
-	
+	align-items: center;	
 }

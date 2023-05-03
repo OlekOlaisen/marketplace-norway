@@ -1,9 +1,9 @@
 .main__listings-grid-container {
   display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-   grid-gap: 2rem;
-   margin: 2rem;
-   margin-top: 6rem;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  grid-gap: 2rem;
+  margin: 2rem;
+  margin-top: 6rem;
 }
 
 .main__listings-grid-item {
@@ -15,6 +15,7 @@
   border-radius: 0.5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 1rem;
+  position: relative;
 }
 
 .main__listings-grid-item img {
@@ -29,5 +30,19 @@
 }
 
 .main__listings-results-price {
-	text-transform: uppercase;
+  text-transform: uppercase;
+}
+
+.main__listings-grid-item > .bi-heart {
+  font-size: 1rem;
+  position: absolute;
+  bottom: 1rem;
+  right: 1rem;
+  
+}
+
+.bi-heart:hover:before {
+  content: "\F415";
+  color: #dc3545;
+  
 }

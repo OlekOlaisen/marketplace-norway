@@ -8,8 +8,13 @@
   --color-info: #17a2b8;
 
   /* Fonts */
-  --font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-size-large: 2rem;
   --font-size-base: 0.8rem;
   --font-size-small: 0.6rem;
+
+  --font-xlarge: 'Exo', sans-serif;
+  --font-large:  'Rubik', sans-serif;
+  --font-base:   'Karma', serif;
+
+
 }
