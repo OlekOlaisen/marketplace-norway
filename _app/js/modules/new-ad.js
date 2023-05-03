@@ -1,6 +1,6 @@
-import Listings from "./listings.js";
 
-export default function NewAd() {
+
+ function NewAd() {
 	const marketButton = document.querySelector('#market');
 	const jobsButton = document.querySelector('#jobs');
 	const propertyButton = document.querySelector('#property');
@@ -94,5 +94,8 @@ export default function NewAd() {
 		return propertyForm;
 	}
 
-	Listings();
+
+	
 }
+
+NewAd();
