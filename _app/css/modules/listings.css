@@ -20,7 +20,7 @@
 }
 
 .main__listings-grid-item:hover {
-  transform: scale(1.1);
+  transform: scale(1.03);
 }
 
 .main__listings-grid-item-image {
