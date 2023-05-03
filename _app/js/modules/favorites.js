@@ -1,21 +1,16 @@
 export default function Favorites() {
-   const favoritesContainer = document.querySelector('.main__favorites-container');
 
-   // Load favorites from local storage or create empty array
+   
+   const favoritesContainer = document.querySelector('.main__favorites-container');
    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
    function saveFavorites() {
-      // Save favorites array to local storage
       localStorage.setItem('favorites', JSON.stringify(favorites));
    }
 
-  
-
    function removeFavorite(listing) {
-      // Find index of listing in favorites array
       const index = favorites.findIndex((fav) => fav.title === listing.title);
       if (index !== -1) {
-         // Remove listing from favorites array and save to local storage
          favorites.splice(index, 1);
          saveFavorites();
       }
@@ -69,7 +64,6 @@ export default function Favorites() {
    createFavoritesDOM();
 
    return {
-      
-      removeFavorite,
+      removeFavorite
    };
 }

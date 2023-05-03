@@ -75,13 +75,7 @@ export default async function Listings() {
     listingList.appendChild(listContainer);
   }
 
-  function addFavorite(listing) {
-    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    favorites.push(listing);
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-    renderFavorites();
-  }
-
+  
   
   await fetchListings();
   renderListings();
