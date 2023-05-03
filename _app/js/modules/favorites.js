@@ -1,5 +1,4 @@
 export default function Favorites() {
-
    
    const favoritesContainer = document.querySelector('.main__favorites-container');
    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];

@@ -58,8 +58,17 @@
   position: absolute;
   bottom: 0.5rem;
   right: 0.5rem;
-  
 }
+
+.bi-heart-fill {
+  font-size: 1rem;
+    position: absolute;
+    bottom: 0.5rem;
+    right: 0.5rem;
+    color: #dc3545;
+}
+
+
 
 .bi-heart:hover:before {
   content: "\F415";
