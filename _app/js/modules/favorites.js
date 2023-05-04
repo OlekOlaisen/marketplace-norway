@@ -33,7 +33,7 @@ export default function Favorites() {
          const favoriteItem = document.createElement('div');
          const favoriteDetails = document.createElement('div');
          const favoriteImage = document.createElement('img');
-         const favoriteTitle = document.createElement('p');
+         const favoriteTitle = document.createElement('a');
          const favoritePrice = document.createElement('p');
          const favoriteCity = document.createElement('p');
          const removeButton = document.createElement('button');
@@ -46,6 +46,7 @@ export default function Favorites() {
          favoriteCity.className = 'main__favorites-item-city';
          removeButton.className = 'main__favorites-item-remove bi bi-x';
 
+         favoriteTitle.href = 'item.html?id=' + favorite._id;
          favoriteTitle.innerText = favorite.title;
          favoriteImage.src = favorite.image;
          favoriteCity.innerText = favorite.city;

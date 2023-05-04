@@ -29,7 +29,7 @@ export default async function Listings() {
     for (const listing of listings) {
       const gridItem = document.createElement('div');
       const listingDetails = document.createElement('div');
-      const listingTitle = document.createElement('p');
+      const listingTitle = document.createElement('a');
       const listingImage = document.createElement('img');
       const listingPrice = document.createElement('p');
       const listingCity = document.createElement('p');
@@ -43,7 +43,7 @@ export default async function Listings() {
       listingCity.className = 'main__listings-grid-item-city';
       favoriteButton.className = 'main__listings-grid-item-favorite bi bi-heart';
       
-      gridItem.href = 'item.html?id=' + listing._id;
+      listingTitle.href = 'item.html?id=' + listing._id;
       listingTitle.innerText = listing.title;
       listingImage.src = listing.image;
       listingPrice.innerText = `${listing.price.number} ${listing.price.currency}`;
