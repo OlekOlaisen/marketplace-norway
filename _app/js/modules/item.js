@@ -1,14 +1,18 @@
+
+
 import { sanity } from '../sanity.js';
 
 export default async function Item() {
    const urlParams = new URLSearchParams(window.location.search);
    const listingId = urlParams.get('id');
    const listingContainer = document.querySelector('.main__listing-container');
+   
 
    let listing = null;
-
+   
    async function fetchListingById() {
       const query = `*[_type == 'listing' && _id == '${listingId}'] {
+         _id,
          'image': image.asset->url,
          'title': name,
          'description': description,
@@ -63,3 +67,5 @@ export default async function Item() {
    await renderListing();
    
 }
+
+Item();

@@ -44,6 +44,8 @@ display: flex;
 .main__listings-grid-item-title {
   font-size: var(--font-size-large);
   text-align: center;
+  color: black;
+  display: block;
 }
 
 .main__listings-grid-item-price {

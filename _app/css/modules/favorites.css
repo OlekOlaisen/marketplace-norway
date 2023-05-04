@@ -57,6 +57,8 @@
 .main__favorites-item-title {
    font-size: var(--font-size-large);
    text-align: center;
+   color: black;
+   display: block;
 }
 
 .main__favorites-item-price {
