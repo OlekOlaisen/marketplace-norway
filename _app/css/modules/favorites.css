@@ -25,8 +25,15 @@
 .main__favorites-empty {
    font-family: var(--font-large);
    text-align: center;
-   font-size: 2rem;
+   font-size: 1.5rem;
    margin: 4rem;
+}
+
+.main__headline {
+   font-family: var(--font-large);
+      text-align: center;
+      font-size: 2rem;
+      margin: 4rem;
 }
 
 .main__favorites-item-image {
@@ -69,6 +76,3 @@
    cursor: pointer;
 }
 
-.bi-x:hover {
-   
-}
