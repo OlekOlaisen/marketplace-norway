@@ -1,7 +1,6 @@
 .icons {
 	display: flex;
 	flex-flow: column;
-	padding: 1rem 2rem;
 	color: var(--color-primary);
 	font-size: 3rem;
 	
@@ -16,10 +15,22 @@
 
 .main__buttons-button {
 	font-family: var(--font-base);
+	cursor: pointer;
 }
 
 form {
 	display: flex;
 	flex-flow: column;
 	align-items: center;	
+}
+
+#result {
+	display: flex;
+	flex-flow: row;
+	gap: 1rem;
+	padding: 1rem 0;
+}
+
+.thumbnail {
+	height: 192px;
 }

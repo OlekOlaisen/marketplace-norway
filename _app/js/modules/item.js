@@ -1,6 +1,5 @@
-
-
 import { sanity } from '../sanity.js';
+
 
 export default async function Item() {
    const urlParams = new URLSearchParams(window.location.search);
@@ -32,6 +31,7 @@ export default async function Item() {
       const price = document.createElement('p');
       const description = document.createElement('p');
       const city = document.createElement('p');
+      
 
       container.className = 'main__listing';
       image.className = 'main__listing-image';
@@ -40,12 +40,15 @@ export default async function Item() {
       price.className = 'main__listing-price';
       description.className = 'main__listing-description';
       city.className = 'main__listing-city';
+      
+      
 
       image.src = listing.image;
       title.innerText = listing.title;
       price.innerText = `${listing.price.number} ${listing.price.currency}`;
       city.innerText = `Location: ${listing.city}`;
       description.innerText = listing.description;
+      
 
       container.appendChild(image);
       container.appendChild(details);
@@ -53,6 +56,7 @@ export default async function Item() {
       details.appendChild(price);
       details.appendChild(description);
       details.appendChild(city);
+      
 
       return container;
    }

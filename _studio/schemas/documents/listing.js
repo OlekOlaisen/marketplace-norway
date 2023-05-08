@@ -55,9 +55,10 @@ export default {
          },
       },
       {
-         title: 'Image',
-         name: 'image',
-         type: 'image',
+         title: 'Images',
+         name: 'images',
+         type: 'array',
+         of: [{ type: 'image' }],
       },
       {
          title: 'Sold',

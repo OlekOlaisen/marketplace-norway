@@ -40,7 +40,8 @@
 			<input type="text" id="location" name="location" required>
 			
 			<label for="image">Image:</label>
-			<input type="file" id="image" name="image" accept="image/*">
+			<input type="file" id="image" name="image" accept="image/*" multiple>
+			<output id="result">
 			
 			<button type="submit">Submit</button>
 			</form>
@@ -95,8 +96,7 @@
 		return propertyForm;
 	}
 
-
-	
 }
+
 
 NewAd();

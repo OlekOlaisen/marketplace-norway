@@ -113,3 +113,4 @@ export default async function Listings() {
   await fetchListings();
   renderListings();
 }
+

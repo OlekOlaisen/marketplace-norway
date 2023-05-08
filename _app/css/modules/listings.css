@@ -1,13 +1,15 @@
 .main__listings-grid-container {
-display: grid;
+  display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 2rem;
-  margin: 2rem;
+  margin-right: auto;
+  margin-left: auto;
   margin-top: 6rem;
+  width: 50%;
 }
 
 .main__listings-grid-item {
-display: flex;
+  display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #fff;
@@ -63,8 +65,8 @@ display: flex;
 
 .bi-heart-fill {
   font-size: 1rem;
-    position: absolute;
-    bottom: 0.5rem;
-    right: 0.5rem;
-    color: #dc3545;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.5rem;
+  color: #dc3545;
 }
