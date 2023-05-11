@@ -17,11 +17,13 @@
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   padding: 0 0 1rem 0;
   position: relative;
-  transition: ease 100ms;
+  transition: ease 0.3s;
+  overflow: hidden;
 }
 
 .main__listings-grid-item:hover {
   transform: scale(1.03);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .main__listings-grid-item-image {
@@ -29,11 +31,15 @@
   height: 150px;
   object-fit: cover;
   border-radius: 0.5rem;
+  transition: filter 0.3s;
+}
+
+.main__listings-grid-item:hover .main__listings-grid-item-image {
+  filter: brightness(90%);
 }
 
 .main__listings-grid-item-details {
   width: 100%;
-  
 }
 
 .main__listings-grid-item-city {
@@ -56,17 +62,20 @@
   text-align: center;
 }
 
-.main__listings-grid-item > .bi-heart {
-  font-size: 1rem;
-  position: absolute;
-  bottom: 0.5rem;
-  right: 0.5rem;
-}
-
+.main__listings-grid-item>.bi-heart,
 .bi-heart-fill {
   font-size: 1rem;
   position: absolute;
   bottom: 0.5rem;
   right: 0.5rem;
-  color: #dc3545;
+  transition: color 0.3s;
+  cursor: pointer;
+}
+
+.main__listings-grid-item:hover>.bi-heart {
+  color: var(--color-primary);
+}
+
+.main__listings-grid-item:hover>.bi-heart-fill {
+  color: var(--color-primary);
 }
