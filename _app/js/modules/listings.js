@@ -48,6 +48,7 @@ export default async function Listings() {
       listingImage.src = listing.image;
       listingPrice.innerText = `${listing.price.number} ${listing.price.currency}`;
       listingCity.innerText = listing.city;
+    
       
       if (favorites.some((favorite) => favorite.title === listing.title)) {
         favoriteButton.className = 'main__listings-grid-item-favorite bi bi-heart-fill';
@@ -62,7 +63,7 @@ export default async function Listings() {
       
       listingDetails.appendChild(listingCity);
       listingDetails.appendChild(listingTitle);
-      listingDetails.appendChild(listingPrice);
+      listingDetails.appendChild(listingPrice);     
       
       gridContainer.appendChild(gridItem);
       
