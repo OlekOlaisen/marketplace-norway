@@ -33,9 +33,12 @@
   border-radius: 0.5rem;
   transition: filter 0.3s;
 }
-
 .main__listings-grid-item:hover .main__listings-grid-item-image {
-  filter: brightness(90%);
+  filter: brightness(100%);
+}
+
+.main__listings-grid-container:hover .main__listings-grid-item:not(:hover) .main__listings-grid-item-image {
+  filter: brightness(60%);
 }
 
 .main__listings-grid-item-details {
