@@ -21,9 +21,12 @@
    overflow: hidden;
 }
 
-.main__favorites-item:hover {
-   transform: scale(1.03);
-   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+.main__favorites-item:hover .main__favorites-item-image {
+   filter: brightness(100%);
+}
+
+.main__favorites-list:hover .main__favorites-item:not(:hover) .main__favorites-item-image {
+   filter: brightness(60%);
 }
 
 .main__favorites-empty {
@@ -46,10 +49,6 @@
    object-fit: cover;
    border-radius: 0.5rem;
    transition: filter 0.3s;
-}
-
-.main__favorites-item:hover .main__favorites-item-image {
-   filter: brightness(90%);
 }
 
 .main__favorites-item-details {
