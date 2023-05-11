@@ -68,7 +68,7 @@ export default {
             list: [
                { title: 'New', value: 'New' },
                { title: 'Used: Good Condition', value: 'Used: Good Condition' },
-               { title: 'Used: Ok Condition ', value: 'Used: Ok Condition: ' },
+               { title: 'Used: Ok Condition ', value: 'Used: Ok Condition' },
             ],
             default: '',
          },
