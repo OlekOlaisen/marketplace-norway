@@ -61,6 +61,19 @@ export default {
          of: [{ type: 'image' }],
       },
       {
+         title: 'State',
+         name: 'state',
+         type: 'string',
+         options: {
+            list: [
+               { title: 'New', value: 'New' },
+               { title: 'Used: Good Condition', value: 'Used: Good Condition' },
+               { title: 'Used: Ok Condition ', value: 'Used: Ok Condition: ' },
+            ],
+            default: '',
+         },
+      },
+      {
          title: 'Sold',
          name: 'sold',
          type: 'boolean',

@@ -16,7 +16,8 @@ export default async function Item() {
          'title': name,
          'description': description,
          'price': price,
-         'city': city
+         'city': city,
+         'state': state
       }[0]`;
 
       listing = await sanity.fetch(query);
@@ -31,6 +32,7 @@ export default async function Item() {
       const price = document.createElement('p');
       const description = document.createElement('p');
       const city = document.createElement('p');
+      const state = document.createElement('p');
       
 
       container.className = 'main__listing';
@@ -40,6 +42,7 @@ export default async function Item() {
       price.className = 'main__listing-price';
       description.className = 'main__listing-description';
       city.className = 'main__listing-city';
+      state.className = 'main__listing-state';
       
       
 
@@ -48,6 +51,7 @@ export default async function Item() {
       price.innerText = `${listing.price.number} ${listing.price.currency}`;
       city.innerText = `Location: ${listing.city}`;
       description.innerText = listing.description;
+      state.innerText = listing.state;
       
 
       container.appendChild(image);
@@ -56,6 +60,7 @@ export default async function Item() {
       details.appendChild(price);
       details.appendChild(description);
       details.appendChild(city);
+      details.appendChild(state);
       
 
       return container;
