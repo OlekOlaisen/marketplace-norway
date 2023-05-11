@@ -66,7 +66,7 @@ export default {
          type: 'string',
          options: {
             list: [
-               { title: 'Used:', value: 'Used: New' },
+               { title: 'Used:', value: 'Used: As New' },
                { title: 'Used: Good Condition', value: 'Used: Good Condition' },
                { title: 'Used: Ok Condition ', value: 'Used: Ok Condition' },
             ],
