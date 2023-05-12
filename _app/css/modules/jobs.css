@@ -44,6 +44,7 @@
 
 .main__jobs-details {
    width: 100%;
+   padding: 0.5rem;
 }
 
 .main__jobs-city {
@@ -54,16 +55,21 @@
 }
 
 .main__jobs-title {
-   font-size: var(--font-size-large);
+   font-size: var(--font-size-base);
    text-align: center;
    color: black;
    display: block;
 }
 
+.main__jobs-jobTitle {
+   text-align: center;
+}
+
 .main__jobs-company {
    text-transform: uppercase;
-   font-size: var(--font-size-base);
-   text-align: center;
+   font-size: var(--font-size-small);
+   text-align: start;
+   color: grey;
 }
 
 .main__jobs-favorite {
@@ -73,6 +79,7 @@
    right: 0.5rem;
    transition: color 0.3s;
    cursor: pointer;
+   color: black;
 }
 
 .main__jobs-listing:hover .main__jobs-favorite {

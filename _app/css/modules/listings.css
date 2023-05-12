@@ -43,6 +43,7 @@
 
 .main__listings-grid-item-details {
   width: 100%;
+  padding: 0.5rem;
 }
 
 .main__listings-grid-item-city {
