@@ -72,20 +72,17 @@
    color: grey;
 }
 
-.main__jobs-favorite {
+.main__jobs-favorite,
+.main__jobs-favorite.bi-heart-fill {
    font-size: 1rem;
    position: absolute;
    bottom: 0.5rem;
    right: 0.5rem;
    transition: color 0.3s;
    cursor: pointer;
-   color: black;
 }
 
-.main__jobs-listing:hover .main__jobs-favorite {
-   color: var(--color-primary);
-}
-
-.main__jobs-favorite.bi-heart-fill {
+.main__jobs-listing:hover .main__jobs-favorite,
+.main__jobs-listing:hover .main__jobs-favorite.bi-heart-fill {
    color: var(--color-primary);
 }
