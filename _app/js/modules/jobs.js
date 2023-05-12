@@ -58,8 +58,11 @@ export default async function Jobs() {
 
          jobsContainer.appendChild(jobListing);
 
-         if (favorites.some((favorite) => favorite.title === job.title)) {
-            favoriteButton.className = 'main__jobs-favorite bi bi-heart-fill';
+         if (
+            favorites.some((favorite) => favorite.title === job.title)
+         ) {
+            favoriteButton.className =
+               'main__jobs-favorite bi bi-heart-fill';
          } else {
             favoriteButton.className = 'main__jobs-favorite bi bi-heart';
          }
@@ -75,6 +78,12 @@ export default async function Jobs() {
                addFavorite(job);
             }
          });
+
+         // Apply fade-in effect
+         jobListing.style.opacity = 0;
+         setTimeout(() => {
+            jobListing.style.opacity = 1;
+         }, 100);
       }
 
       return jobsContainer;

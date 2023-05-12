@@ -1,6 +1,6 @@
 export default function Favorites() {
-
    const favoritesContainer = document.querySelector('.main__favorites-container');
+   const favoritesJobsContainer = document.querySelector('.main__favorites-jobs-container');
    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
    const jobFavorites = JSON.parse(localStorage.getItem('jobFavorites')) || [];
 
@@ -30,6 +30,7 @@ export default function Favorites() {
 
    function createFavoritesDOM() {
       favoritesContainer.innerHTML = '';
+      favoritesJobsContainer.innerHTML = '';
 
       if (favorites.length === 0 && jobFavorites.length === 0) {
          const emptyFavorites = document.createElement('p');
@@ -41,6 +42,7 @@ export default function Favorites() {
 
       const favoritesList = document.createElement('div');
       favoritesList.className = 'main__favorites-list';
+
 
       for (const favorite of favorites) {
          const favoriteItem = document.createElement('div');
@@ -73,11 +75,21 @@ export default function Favorites() {
          favoriteItem.appendChild(removeButton);
          favoritesList.appendChild(favoriteItem);
 
+         favoriteItem.style.opacity = 0;
+         setTimeout(() => {
+            favoriteItem.style.opacity = 1;
+         }, 100);
+
+
          removeButton.addEventListener('click', () => {
             removeFavorite(favorite);
             createFavoritesDOM();
          });
       }
+
+
+      const favoritesJobsList = document.createElement('div');
+      favoritesJobsList.className = 'main__favorites-list';
 
       for (const jobFavorite of jobFavorites) {
          const jobFavoriteItem = document.createElement('div');
@@ -112,7 +124,7 @@ export default function Favorites() {
          jobFavoriteDetails.appendChild(jobFavoriteJobTitle);
          jobFavoriteDetails.appendChild(jobFavoriteCompany);
          jobFavoriteItem.appendChild(removeButton);
-         favoritesList.appendChild(jobFavoriteItem);
+         favoritesJobsList.appendChild(jobFavoriteItem);
 
          removeButton.addEventListener('click', () => {
             removeJobFavorite(jobFavorite);
@@ -121,6 +133,7 @@ export default function Favorites() {
       }
 
       favoritesContainer.appendChild(favoritesList);
+      favoritesJobsContainer.appendChild(favoritesJobsList);
    }
 
    createFavoritesDOM();

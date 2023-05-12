@@ -4,7 +4,8 @@
    gap: 1rem;
    margin-right: auto;
    margin-left: auto;
-   margin-top: 6rem;
+   margin-top: 1rem;
+   margin-bottom: 3rem;
    width: 50%;
 }
 
@@ -36,9 +37,9 @@
 }
 
 .main__headline {
-   font-family: var(--font-large);
+   font-family: var(--font-xlarge);
    text-align: center;
-   font-size: 2rem;
+   
    margin: 4rem;
 }
 
@@ -88,6 +89,7 @@
 .main__favorites-item-jobTitle {
    text-align: center;
    font-weight: 600;
+   font-family: var(--font-xlarge);
 }
 
 .main__favorites-item-remove {
@@ -106,4 +108,10 @@
 
 .main__favorites-item-remove:hover {
    background-color: var(--color-primary);
+}
+
+.main__title {
+   text-align: center;
+   font-family: var(--font-large);
+   font-size: var(--font-size-xlarge);
 }
