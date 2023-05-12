@@ -63,6 +63,8 @@
 
 .main__jobs-jobTitle {
    text-align: center;
+   font-weight: 600;
+   font-family: var(--font-xlarge);
 }
 
 .main__jobs-company {
