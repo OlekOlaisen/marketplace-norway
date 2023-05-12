@@ -48,6 +48,16 @@ export default async function Listings() {
       listingImage.src = listing.image;
       listingPrice.innerText = `${listing.price.number} ${listing.price.currency}`;
       listingCity.innerText = listing.city;
+
+      gridItem.appendChild(listingImage);
+      gridItem.appendChild(listingDetails);
+      gridItem.appendChild(favoriteButton);
+
+      listingDetails.appendChild(listingCity);
+      listingDetails.appendChild(listingTitle);
+      listingDetails.appendChild(listingPrice);
+
+      gridContainer.appendChild(gridItem);
     
       
       if (favorites.some((favorite) => favorite.title === listing.title)) {
@@ -56,16 +66,6 @@ export default async function Listings() {
       else {
         favoriteButton.className = 'main__listings-grid-item-favorite bi bi-heart';
       }
-      
-      gridItem.appendChild(listingImage);
-      gridItem.appendChild(listingDetails);
-      gridItem.appendChild(favoriteButton);
-      
-      listingDetails.appendChild(listingCity);
-      listingDetails.appendChild(listingTitle);
-      listingDetails.appendChild(listingPrice);     
-      
-      gridContainer.appendChild(gridItem);
       
       favoriteButton.addEventListener('click', () => {
         if (favoriteButton.classList.contains('bi-heart-fill')) {

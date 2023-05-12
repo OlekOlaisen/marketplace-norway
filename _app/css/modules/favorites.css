@@ -15,7 +15,6 @@
    background-color: #fff;
    border-radius: 0.3rem;
    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-   padding: 0 0 1rem 0;
    position: relative;
    transition: ease 0.3s;
    overflow: hidden;
@@ -53,6 +52,7 @@
 
 .main__favorites-item-details {
    width: 100%;
+   padding: 0.5rem;
 }
 
 .main__favorites-item-city {
@@ -67,12 +67,27 @@
    text-align: center;
    color: black;
    display: block;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+   overflow: hidden;
 }
 
 .main__favorites-item-price {
    text-transform: uppercase;
    font-size: var(--font-size-base);
    text-align: center;
+}
+
+.main__favorites-item-company {
+   text-transform: uppercase;
+   font-size: var(--font-size-small);
+   text-align: start;
+   color: grey;
+}
+
+.main__favorites-item-jobTitle {
+   text-align: center;
+   font-weight: 600;
 }
 
 .main__favorites-item-remove {

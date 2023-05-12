@@ -20,14 +20,19 @@ export default {
          rows: 5,
       },
       {
+         title: 'Job Title',
+         name: 'jobTitle',
+         type: 'string',
+      },
+      {
          title: 'Category',
          name: 'category',
          type: 'reference',
          to: { type: 'category' },
       },
       {
-         title: 'Location',
-         name: 'location',
+         title: 'City',
+         name: 'city',
          type: 'string',
       },
       {
