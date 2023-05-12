@@ -1,10 +1,15 @@
 export default function Favorites() {
-   
+
    const favoritesContainer = document.querySelector('.main__favorites-container');
    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
+   const jobFavorites = JSON.parse(localStorage.getItem('jobFavorites')) || [];
 
    function saveFavorites() {
       localStorage.setItem('favorites', JSON.stringify(favorites));
+   }
+
+   function saveJobFavorites() {
+      localStorage.setItem('jobFavorites', JSON.stringify(jobFavorites));
    }
 
    function removeFavorite(listing) {
@@ -15,10 +20,18 @@ export default function Favorites() {
       }
    }
 
+   function removeJobFavorite(job) {
+      const index = jobFavorites.findIndex((fav) => fav.title === job.title);
+      if (index !== -1) {
+         jobFavorites.splice(index, 1);
+         saveJobFavorites();
+      }
+   }
+
    function createFavoritesDOM() {
       favoritesContainer.innerHTML = '';
 
-      if (favorites.length === 0) {
+      if (favorites.length === 0 && jobFavorites.length === 0) {
          const emptyFavorites = document.createElement('p');
          emptyFavorites.innerText = 'No favorites added yet.';
          emptyFavorites.className = 'main__favorites-empty';
@@ -37,7 +50,7 @@ export default function Favorites() {
          const favoritePrice = document.createElement('p');
          const favoriteCity = document.createElement('p');
          const removeButton = document.createElement('button');
-    
+
          favoriteItem.className = 'main__favorites-item';
          favoriteDetails.className = 'main__favorites-item-details';
          favoriteImage.className = 'main__favorites-item-image';
@@ -66,12 +79,55 @@ export default function Favorites() {
          });
       }
 
+      for (const jobFavorite of jobFavorites) {
+         const jobFavoriteItem = document.createElement('div');
+         const jobFavoriteDetails = document.createElement('div');
+         const jobFavoriteImage = document.createElement('img');
+         const jobFavoriteTitle = document.createElement('a');
+         const jobFavoriteCompany = document.createElement('p');
+         const jobFavoriteJobTitle = document.createElement('p');
+         const jobFavoriteCity = document.createElement('p');
+         const removeButton = document.createElement('button');
+
+         jobFavoriteItem.className = 'main__favorites-item';
+         jobFavoriteDetails.className = 'main__favorites-item-details';
+         jobFavoriteImage.className = 'main__favorites-item-image';
+         jobFavoriteTitle.className = 'main__favorites-item-title';
+         jobFavoriteCompany.className = 'main__favorites-item-company';
+         jobFavoriteJobTitle.className = 'main__favorites-item-jobTitle';
+         jobFavoriteCity.className = 'main__favorites-item-city';
+         removeButton.className = 'main__favorites-item-remove bi bi-x';
+
+         jobFavoriteTitle.href = 'job.html?id=' + jobFavorite._id;
+         jobFavoriteTitle.innerText = jobFavorite.title;
+         jobFavoriteImage.src = jobFavorite.image;
+         jobFavoriteCompany.innerText = jobFavorite.company;
+         jobFavoriteJobTitle.innerText = jobFavorite.jobTitle;
+         jobFavoriteCity.innerText = jobFavorite.city;
+
+         jobFavoriteItem.appendChild(jobFavoriteImage);
+         jobFavoriteItem.appendChild(jobFavoriteDetails);
+         jobFavoriteDetails.appendChild(jobFavoriteCity);
+         jobFavoriteDetails.appendChild(jobFavoriteTitle);
+         jobFavoriteDetails.appendChild(jobFavoriteJobTitle);
+         jobFavoriteDetails.appendChild(jobFavoriteCompany);
+         jobFavoriteItem.appendChild(removeButton);
+         favoritesList.appendChild(jobFavoriteItem);
+
+         removeButton.addEventListener('click', () => {
+            removeJobFavorite(jobFavorite);
+            createFavoritesDOM();
+         });
+      }
+
       favoritesContainer.appendChild(favoritesList);
    }
 
    createFavoritesDOM();
 
    return {
-      removeFavorite
+      removeFavorite,
+      removeJobFavorite
    };
 }
+
