@@ -1,7 +1,7 @@
 import { sanity } from '../sanity.js';
 
 
-export default async function Item() {
+export default async function itemDetails() {
    const urlParams = new URLSearchParams(window.location.search);
    const listingId = urlParams.get('id');
    const listingContainer = document.querySelector('.main__listing-container');
@@ -77,4 +77,4 @@ export default async function Item() {
    
 }
 
-Item();
+itemDetails();
