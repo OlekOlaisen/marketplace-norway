@@ -147,8 +147,7 @@ export default function Favorites() {
          });
       }
 
-      favoritesContainer.appendChild(favoritesList);
-      favoritesJobsContainer.appendChild(favoritesJobsList);
+      
 
 
       const favoritesPropertiesList = document.createElement('div');
@@ -159,25 +158,34 @@ export default function Favorites() {
          const propertyFavoriteDetails = document.createElement('div');
          const propertyFavoriteImage = document.createElement('img');
          const propertyFavoriteTitle = document.createElement('a');
-         const propertyFavoriteDescription = document.createElement('p');
+         const propertyFavoritePrice = document.createElement('p');
+         const propertyFavoriteCurrency = document.createElement('p');
+         const propertyFavoriteLocation = document.createElement('p');
          const removeButton = document.createElement('button');
 
          propertyFavoriteItem.className = 'main__favorites-item';
          propertyFavoriteDetails.className = 'main__favorites-item-details';
          propertyFavoriteImage.className = 'main__favorites-item-image';
          propertyFavoriteTitle.className = 'main__favorites-item-title';
-         propertyFavoriteDescription.className = 'main__favorites-item-description';
+         propertyFavoritePrice.className = 'main__favorites-item-price';
+         propertyFavoriteCurrency.className = 'main__favorites-item-currency';
+         propertyFavoriteLocation.className = 'main__favorites-item-location';
          removeButton.className = 'main__favorites-item-remove bi bi-x';
 
          propertyFavoriteTitle.href = 'property.html?id=' + propertyFavorite._id;
          propertyFavoriteTitle.innerText = propertyFavorite.title;
-         propertyFavoriteImage.src = propertyFavorite.images && propertyFavorite.images.length > 0 ? propertyFavorite.images[0].asset.url : '';
-         propertyFavoriteDescription.innerText = propertyFavorite.description;
+         propertyFavoriteImage.src = propertyFavorite.images[0];
+         propertyFavoritePrice.innerText = propertyFavorite.price + " " + propertyFavorite.currency ;
+         propertyFavoriteCurrency.innerText = propertyFavorite.currency;
+         propertyFavoriteLocation.innerText = propertyFavorite.location;
+         
+         
 
          propertyFavoriteItem.appendChild(propertyFavoriteImage);
          propertyFavoriteItem.appendChild(propertyFavoriteDetails);
+         propertyFavoriteDetails.appendChild(propertyFavoriteLocation);
          propertyFavoriteDetails.appendChild(propertyFavoriteTitle);
-         propertyFavoriteDetails.appendChild(propertyFavoriteDescription);
+         propertyFavoriteDetails.appendChild(propertyFavoritePrice);
          propertyFavoriteItem.appendChild(removeButton);
          favoritesPropertiesList.appendChild(propertyFavoriteItem);
 
@@ -187,6 +195,9 @@ export default function Favorites() {
          });
       }
 
+   
+      favoritesContainer.appendChild(favoritesList);
+      favoritesJobsContainer.appendChild(favoritesJobsList);
       favoritesPropertiesContainer.appendChild(favoritesPropertiesList);
    }
 

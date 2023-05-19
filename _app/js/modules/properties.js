@@ -47,7 +47,7 @@ export default async function Properties() {
 
          propertyTitle.href = 'property.html?id=' + property._id;
          propertyTitle.innerText = property.title;
-         propertyImage.src = property.images[0]; // assuming first image is the main image
+         propertyImage.src = property.images[0]; 
          propertyLocation.innerText = property.location;
          propertyPrice.innerText = property.currency + " " + property.price;
 

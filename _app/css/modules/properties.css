@@ -85,3 +85,11 @@
 .main__property-listing:hover>.main__property-favorite.bi-heart-fill {
    color: var(--color-primary);
 }
+
+
+.main__favorites-item-location {
+   color: grey;
+      font-size: var(--font-size-small);
+      text-align: end;
+      margin: 0.1rem;
+}
