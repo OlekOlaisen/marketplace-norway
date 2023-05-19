@@ -15,6 +15,7 @@ export default async function Listings() {
     listings = await sanity.fetch(query);
   }
 
+  
   function createListingContainerDOM() {
     const gridContainer = document.createElement('div');
     gridContainer.className = 'main__listings-grid-container';

@@ -59,6 +59,7 @@ export default function Favorites() {
       favoritesList.className = 'main__favorites-list';
 
 
+      
       for (const favorite of favorites) {
          const favoriteItem = document.createElement('div');
          const favoriteDetails = document.createElement('div');

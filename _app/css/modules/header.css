@@ -115,9 +115,19 @@
 		border-bottom-width: 2px;
 	}
 
+	25% {
+		transform: translateY(0);
+		border-bottom-width: 4px;
+	}
+
 	50% {
 		transform: translateY(-2px);
 		border-bottom-width: 6px;
+	}
+
+	75% {
+		transform: translateY(0);
+		border-bottom-width: 4px;
 	}
 
 	100% {
