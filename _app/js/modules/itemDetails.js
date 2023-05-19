@@ -23,6 +23,7 @@ export default async function itemDetails() {
       listing = await sanity.fetch(query);
       console.log(listing)
    }
+   
 
    function createListingDOM() {
       const container = document.createElement('div');

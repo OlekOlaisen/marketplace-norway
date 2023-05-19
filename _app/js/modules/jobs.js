@@ -16,6 +16,7 @@ export default async function Jobs() {
       jobs = await sanity.fetch(query);
    }
    
+   
    function createJobsContainerDOM() {
       const jobsContainer = document.createElement('div');
       jobsContainer.className = 'main__jobs-container';

@@ -21,6 +21,7 @@ export default async function jobDetails() {
       }[0]`;
       
       
+      
       job = await sanity.fetch(query);
       console.log(listingId);
    }
