@@ -45,7 +45,7 @@ export default async function Properties() {
          propertyPrice.className = 'main__property-price';
          favoriteButton.className = 'main__property-favorite bi bi-heart';
 
-         propertyTitle.href = 'property.html?id=' + property._id;
+         propertyTitle.href = 'propertyDetailed.html?id=' + property._id;
          propertyTitle.innerText = property.title;
          propertyImage.src = property.images[0]; 
          propertyLocation.innerText = property.location;

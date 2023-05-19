@@ -42,6 +42,7 @@ export default async function Jobs() {
          favoriteButton.className = 'main__jobs-favorite bi bi-heart';
 
          jobTitle.innerText = job.title;
+         jobTitle.href = 'jobDetailed.html?id=' + job._id;
          jobImage.src = job.image;
          jobCompany.innerText = job.company;
          jobTitleCompany.innerText = job.jobTitle;

@@ -125,7 +125,7 @@ export default function Favorites() {
          jobFavoriteCity.className = 'main__favorites-item-city';
          removeButton.className = 'main__favorites-item-remove bi bi-x';
 
-         jobFavoriteTitle.href = 'job.html?id=' + jobFavorite._id;
+         jobFavoriteTitle.href = 'jobDetailed.html?id=' + jobFavorite._id;
          jobFavoriteTitle.innerText = jobFavorite.title;
          jobFavoriteImage.src = jobFavorite.image;
          jobFavoriteCompany.innerText = jobFavorite.company;
