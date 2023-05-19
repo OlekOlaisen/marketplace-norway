@@ -1,14 +1,14 @@
 import { sanity } from '../sanity.js';
 
 
-export default async function Item() {
+export default async function itemDetails() {
    const urlParams = new URLSearchParams(window.location.search);
    const listingId = urlParams.get('id');
    const listingContainer = document.querySelector('.main__listing-container');
-   
+
 
    let listing = null;
-   
+
    async function fetchListingById() {
       const query = `*[_type == 'listing' && _id == '${listingId}'] {
          _id,
@@ -24,6 +24,7 @@ export default async function Item() {
       console.log(listing)
    }
 
+
    function createListingDOM() {
       const container = document.createElement('div');
       const image = document.createElement('img');
@@ -33,7 +34,7 @@ export default async function Item() {
       const description = document.createElement('p');
       const city = document.createElement('p');
       const state = document.createElement('p');
-      
+
 
       container.className = 'main__listing';
       image.className = 'main__listing-image';
@@ -43,8 +44,8 @@ export default async function Item() {
       description.className = 'main__listing-description';
       city.className = 'main__listing-city';
       state.className = 'main__listing-state';
-      
-      
+
+
 
       image.src = listing.image;
       title.innerText = listing.title;
@@ -52,7 +53,7 @@ export default async function Item() {
       city.innerText = `Location: ${listing.city}`;
       description.innerText = listing.description;
       state.innerText = listing.state;
-      
+
 
       container.appendChild(image);
       container.appendChild(details);
@@ -61,7 +62,7 @@ export default async function Item() {
       details.appendChild(description);
       details.appendChild(city);
       details.appendChild(state);
-      
+
 
       return container;
    }
@@ -74,7 +75,7 @@ export default async function Item() {
 
    await fetchListingById();
    await renderListing();
-   
+
 }
 
-Item();
+itemDetails();
