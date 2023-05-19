@@ -1,4 +1,4 @@
-.main__jobs-container {
+.main__property-container {
    display: grid;
    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
    gap: 1rem;
@@ -8,7 +8,7 @@
    width: 50%;
 }
 
-.main__jobs-listing {
+.main__property-listing {
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -21,12 +21,12 @@
    overflow: hidden;
 }
 
-.main__jobs-listing:hover {
+.main__property-listing:hover {
    transform: scale(1.03);
    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.main__jobs-image {
+.main__property-image {
    width: 100%;
    height: 200px;
    object-fit: cover;
@@ -34,49 +34,42 @@
    transition: filter 0.3s;
 }
 
-.main__jobs-listing:hover .main__jobs-image {
+.main__property-listing:hover .main__property-image {
    filter: brightness(100%);
 }
 
-.main__jobs-container:hover .main__jobs-listing:not(:hover) .main__jobs-image {
+.main__properties-container:hover .main__property-listing:not(:hover) .main__property-image {
    filter: brightness(60%);
 }
 
-.main__jobs-details {
+.main__property-details {
    width: 100%;
    padding: 0.5rem;
 }
 
-.main__jobs-city {
+.main__property-location {
    color: grey;
    font-size: var(--font-size-small);
    text-align: end;
    margin: 0.1rem;
 }
 
-.main__jobs-title {
+.main__property-title {
    font-size: var(--font-size-base);
    text-align: center;
    color: black;
    display: block;
 }
 
-.main__jobs-jobTitle {
-   display: block;
-   text-align: center;
-   font-weight: 600;
-   font-family: var(--font-xlarge);
-}
-
-.main__jobs-company {
+.main__property-price {
    text-transform: uppercase;
-   font-size: var(--font-size-small);
-   text-align: start;
-   color: grey;
+   font-size: var(--font-size-base);
+   text-align: center;
+   font-weight: 700;
 }
 
-.main__jobs-favorite,
-.main__jobs-favorite.bi-heart-fill {
+.main__property-listing>.main__property-favorite,
+.main__property-listing>.main__property-favorite.bi-heart-fill {
    font-size: 1rem;
    position: absolute;
    bottom: 0.5rem;
@@ -85,7 +78,10 @@
    cursor: pointer;
 }
 
-.main__jobs-listing:hover .main__jobs-favorite,
-.main__jobs-listing:hover .main__jobs-favorite.bi-heart-fill {
+.main__property-listing:hover>.main__property-favorite {
+   color: var(--color-primary);
+}
+
+.main__property-listing:hover>.main__property-favorite.bi-heart-fill {
    color: var(--color-primary);
 }
