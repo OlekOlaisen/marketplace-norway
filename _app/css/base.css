@@ -15,6 +15,7 @@ body {
 
 .main__listings-title {
 	text-align: center;
-		font-family: var(--font-large);
-		font-size: var(--font-size-xlarge);
+	font-family: var(--font-large);
+	font-size: var(--font-size-xlarge);
+	margin-top: 2rem;
 }
