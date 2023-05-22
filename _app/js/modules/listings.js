@@ -22,7 +22,7 @@ export default async function Listings() {
     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
 
     for (const listing of listings) {
-      const gridItem = document.createElement('div');
+      const listingItem = document.createElement('div');
       const listingDetails = document.createElement('div');
       const listingTitle = document.createElement('a');
       const listingImage = document.createElement('img');
@@ -30,7 +30,7 @@ export default async function Listings() {
       const listingCity = document.createElement('p');
       const favoriteButton = document.createElement('button');
 
-      gridItem.className = 'main__listings-grid-item';
+      listingItem.className = 'main__listings-grid-item';
       listingDetails.className = 'main__listings-grid-item-details';
       listingTitle.className = 'main__listings-grid-item-title';
       listingImage.className = 'main__listings-grid-item-image';
@@ -45,15 +45,15 @@ export default async function Listings() {
       listingPrice.innerText = `${listing.price.number} ${listing.price.currency}`;
       listingCity.innerText = listing.city;
 
-      gridItem.appendChild(listingImage);
-      gridItem.appendChild(listingDetails);
-      gridItem.appendChild(favoriteButton);
+      listingItem.appendChild(listingImage);
+      listingItem.appendChild(listingDetails);
+      listingItem.appendChild(favoriteButton);
 
       listingDetails.appendChild(listingCity);
       listingDetails.appendChild(listingTitle);
       listingDetails.appendChild(listingPrice);
 
-      gridContainer.appendChild(gridItem);
+      gridContainer.appendChild(listingItem);
 
       if (
         favorites.some((favorite) => favorite.title === listing.title)
@@ -78,9 +78,9 @@ export default async function Listings() {
       });
 
       // Apply fade-in effect
-      gridItem.style.opacity = 0;
+      listingItem.style.opacity = 0;
       setTimeout(() => {
-        gridItem.style.opacity = 1;
+        listingItem.style.opacity = 1;
       }, 100);
     }
 

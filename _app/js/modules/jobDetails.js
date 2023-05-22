@@ -3,7 +3,7 @@ import { sanity } from '../sanity.js';
 export default async function jobDetails() {
    const urlParams = new URLSearchParams(window.location.search);
    const listingId = urlParams.get('id');
-   const jobsContainer = document.querySelector('.main__jobs-container');
+   const jobsContainer = document.querySelector('.main__jobs-detailed');
 
    let job = null;
 
@@ -37,15 +37,15 @@ export default async function jobDetails() {
       const company = document.createElement('p');
       const applicationDeadline = document.createElement('p');
 
-      container.className = 'main__job';
-      image.className = 'main__job-image';
-      title.className = 'main__job-title';
-      description.className = 'main__job-description';
-      jobTitle.className = 'main__job-jobTitle';
-      city.className = 'main__job-city';
-      salaryRange.className = 'main__job-salaryRange';
-      company.className = 'main__job-company';
-      applicationDeadline.className = 'main__job-applicationDeadline';
+      container.className = 'main__jobs-detailed-container';
+      image.className = 'main__jobs-detailed-image';
+      title.className = 'main__jobs-detailed-title';
+      description.className = 'main__jobs-detailed-description';
+      jobTitle.className = 'main__jobs-detailed-jobTitle';
+      city.className = 'main__jobs-detailed-city';
+      salaryRange.className = 'main__jobs-detailed-salaryRange';
+      company.className = 'main__jobs-detailed-company';
+      applicationDeadline.className = 'main__jobs-detailed-applicationDeadline';
 
       image.src = job.image;
       title.innerText = job.title;
@@ -58,8 +58,8 @@ export default async function jobDetails() {
 
       container.appendChild(image);
       container.appendChild(title);
-      container.appendChild(description);
       container.appendChild(jobTitle);
+      container.appendChild(description);
       container.appendChild(city);
       container.appendChild(salaryRange);
       container.appendChild(company);

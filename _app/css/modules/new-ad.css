@@ -58,14 +58,9 @@ form button[type="submit"]:hover {
 	background-color: transparent;
 	color: black;
 	border-radius: 5px;
-	cursor: pointer;
+	
 }
 
-#market:hover,
-#jobs:hover,
-#property:hover {
-	color: var(--color-primary);
-}
 
 .icons {
 	display: flex;

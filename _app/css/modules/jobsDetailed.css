@@ -1,11 +1,18 @@
-.main__jobs-container {
+.main__jobs-detailed {
+   display: flex;
+   flex-flow: row;
+   justify-content: center;
+}
+
+.main__jobs-detailed-container {
    display: flex;
    flex-direction: column;
    align-items: center;
    padding: 20px;
+   width: 100%;
 }
 
-.main__job {
+.main__jobs-detailed-container {
    display: flex;
    flex-direction: column;
    background-color: #fff;
@@ -15,30 +22,46 @@
    max-width: 800px;
 }
 
-.main__job-image {
+.main__jobs-detailed-image {
    width: 100%;
    height: 300px;
    object-fit: cover;
 }
 
-.main__job-title,
-.main__job-jobTitle,
-.main__job-company {
+.main__jobs-detailed-description,
+.main__jobs-detailed-title,
+.main__jobs-detailed-jobTitle,
+.main__jobs-detailed-city,
+.main__jobs-detailed-salaryRange,
+.main__jobs-detailed-company,
+.main__jobs-detailed-applicationDeadline {
+   display: flex;
+   flex-direction: column;
+   padding: 1rem;
+}
+
+.main__jobs-detailed-title {
    font-size: 24px;
    font-weight: bold;
    margin-bottom: 0.5rem;
 }
 
-.main__job-description,
-.main__job-city,
-.main__job-applicationDeadline {
+.main__jobs-detailed-description {
    font-size: 16px;
    margin-bottom: 0.5rem;
 }
 
-.main__job-salaryRange {
+.main__jobs-detailed-jobTitle,
+.main__jobs-detailed-company {
    font-size: 18px;
    font-weight: bold;
    margin-bottom: 0.5rem;
-   text-transform: uppercase;
+}
+
+.main__jobs-detailed-city,
+.main__jobs-detailed-salaryRange,
+.main__jobs-detailed-applicationDeadline {
+   font-size: 14px;
+   color: #666;
+   margin-bottom: 0.5rem;
 }
