@@ -111,7 +111,6 @@ export default async function Properties() {
 
    function renderProperties() {
       const propertyListContainer = createPropertyContainerDOM();
-      console.log(propertyList); // Add this line
       propertyList.innerHTML = '';
       propertyList.appendChild(propertyListContainer);
    }
