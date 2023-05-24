@@ -26,7 +26,7 @@
 	function getMarketForm() {
 		// Define your market form HTML here
 		const marketForm = `
-			<form action="../../../netlify/functions/submitForm" method="POST">
+			<form>
 				<label for="name">Name:</label>
 				<input type="text" id="name" name="name" required>
 
@@ -118,29 +118,6 @@
 		`;
 		return propertyForm;
 	}
-
-	 document.querySelector('form').addEventListener('submit', function (event) {
-		 event.preventDefault();
-
-		 const formData = new FormData(event.target);
-
-		 fetch(event.target.action, {
-			 method: 'POST',
-			 body: JSON.stringify(Object.fromEntries(formData)),
-			 headers: {
-				 'Content-Type': 'application/json'
-			 }
-		 })
-			 .then(response => response.json())
-			 .then(data => {
-				 console.log('Success:', data);
-				 // handle success here
-			 })
-			 .catch((error) => {
-				 console.error('Error:', error);
-				 // handle error here
-			 });
-	 });
 
 }
 
