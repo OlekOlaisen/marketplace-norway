@@ -121,49 +121,66 @@
 		transform: translateY(0);
 		border-bottom-width: 2px;
 	}
-	
+
 	50% {
 		transform: translateY(-2px);
 		border-bottom-width: 6px;
 	}
-	
+
 	100% {
 		transform: translateY(0);
 		border-bottom-width: 2px;
 	}
 }
 
+
+
+.header__bottom.hidden {
+	display: none;
+}
+
+.header__bottom.visible {
+	display: flex;
+}
+
+/* The rest of your CSS code remains the same. */
+
 @media (max-width: 768px) {
-	
+
 	.header__top-toggle {
 		display: block;
+		z-index: 1;
 	}
-	
+
 	.header__bottom {
 		display: none;
-		
 	}
-	
-	.header__bottom--visible {
+
+	.header__bottom.hidden {
+		display: none;
+	}
+
+	.header__bottom.visible {
 		display: flex;
 		flex-flow: column-reverse;
 		justify-content: start;
-		width: 100vw;
+		width: 100%;
 		padding: 1rem;
 	}
-	
-	
+
+
 	.header__bottom-left {
 		display: flex;
 		flex-flow: column;
 		background-color: white;
 		z-index: 3;
 	}
-	
+
 	.header__bottom-right {
 		display: flex;
 		flex-flow: column;
 		background-color: white;
 		z-index: 3;
 	}
+
 }
