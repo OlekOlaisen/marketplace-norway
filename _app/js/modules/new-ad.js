@@ -119,6 +119,29 @@
 		return propertyForm;
 	}
 
+	 document.querySelector('form').addEventListener('submit', function (event) {
+		 event.preventDefault();
+
+		 const formData = new FormData(event.target);
+
+		 fetch(event.target.action, {
+			 method: 'POST',
+			 body: JSON.stringify(Object.fromEntries(formData)),
+			 headers: {
+				 'Content-Type': 'application/json'
+			 }
+		 })
+			 .then(response => response.json())
+			 .then(data => {
+				 console.log('Success:', data);
+				 // handle success here
+			 })
+			 .catch((error) => {
+				 console.error('Error:', error);
+				 // handle error here
+			 });
+	 });
+
 }
 
 
