@@ -6,15 +6,16 @@
 	<title>Sell item</title>
 	<link rel="icon" type="image/x-icon" href="./_app/assets/images/favicon.ico">
 	<link rel="stylesheet" href="/_app/css/main.css" preload>
-
+	
 </head>
 
 <body>
 	<header class="header">
 		<div class="header__top">
 			<a class="header__logo" href="./index.html"><img src="./_app/assets/images/logo.png" alt="marketplace logo"></a>
+			<button class="header__top-toggle"><i class="bi bi-list"></i></button>
 		</div>
-	
+		
 		<div class="header__bottom">
 			<div class="header__bottom-left">
 				<a class="header__bottom-left-link" href="./market.html">Market</a>
@@ -25,22 +26,22 @@
 				<a class="header__bottom-right-link--active" href="./new-ad.html"><i class="bi bi-plus-circle"></i> Sell item</a>
 				<a class="header__bottom-right-link" href="./favorites.html"><i class="bi bi-heart"></i> Favorites</a>
 			</div>
-	
+			
 		</div>
 	</header>
 	
 	<main class="main">
 		<div class="main__buttons">
 			<button id="market" class="main__buttons-button"><i class="bi bi-shop-window icons"></i> Market</button>
-		<button id="jobs" class="main__buttons-button"><i class="bi bi-person-workspace icons"></i> Jobs</button>
-		<button id="property" class="main__buttons-button"><i class="bi bi-house-door icons"></i> Property</button>
+			<button id="jobs" class="main__buttons-button"><i class="bi bi-person-workspace icons"></i> Jobs</button>
+			<button id="property" class="main__buttons-button"><i class="bi bi-house-door icons"></i> Property</button>
 		</div>
 		
 		<div id="main__form"></div>
 		
 	</main>
 	<footer class="footer"></footer>
-
+	
 	<script src="/_app/js/modules/new-ad.js"></script>
 </body>
 </html>
