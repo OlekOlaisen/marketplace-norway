@@ -35,6 +35,7 @@ export default async function propertyDetails() {
       // initially, set the image src to the first image
       image.src = property.images[0];
       title.innerText = property.title;
+      document.title = property.title;
       nextButton.innerText = '';
       previousButton.innerText = '';
       imageCounter.innerText = `1/${property.images.length}`;

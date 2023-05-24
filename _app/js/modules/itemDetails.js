@@ -49,6 +49,7 @@ export default async function itemDetails() {
 
       image.src = listing.image;
       title.innerText = listing.title;
+      document.title = listing.title;
       price.innerText = `${listing.price.number} ${listing.price.currency}`;
       city.innerText = `Location: ${listing.city}`;
       description.innerText = listing.description;

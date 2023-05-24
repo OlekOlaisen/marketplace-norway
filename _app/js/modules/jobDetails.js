@@ -49,6 +49,7 @@ export default async function jobDetails() {
 
       image.src = job.image;
       title.innerText = job.title;
+      document.title = job.title;
       description.innerText = job.description;
       jobTitle.innerText = `Job Title: ${job.jobTitle}`;
       city.innerText = `City: ${job.city}`;
