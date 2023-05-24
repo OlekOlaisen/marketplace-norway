@@ -23,7 +23,7 @@ export default async function jobDetails() {
 
 
       job = await sanity.fetch(query);
-      console.log(listingId);
+      
    }
 
    function createJobDOM() {

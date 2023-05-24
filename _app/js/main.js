@@ -6,7 +6,7 @@ import Jobs from "./modules/jobs.js";
 import jobDetails from "./modules/jobDetails.js";
 import Properties from "./modules/properties.js";
 import Header from "./modules/header.js";
-
+import propertyDetails from "./modules/propertyDetails.js";
 
 
 
@@ -19,3 +19,4 @@ Jobs();
 jobDetails();
 Properties();
 Header();
+propertyDetails();
