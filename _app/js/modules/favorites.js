@@ -175,7 +175,7 @@ export default function Favorites() {
          propertyFavoriteTitle.href = 'property.html?id=' + propertyFavorite._id;
          propertyFavoriteTitle.innerText = propertyFavorite.title;
          propertyFavoriteImage.src = propertyFavorite.images[0];
-         propertyFavoritePrice.innerText = propertyFavorite.price + " " + propertyFavorite.currency ;
+         propertyFavoritePrice.innerText = parseFloat(propertyFavorite.price).toLocaleString('de-DE') + " " + propertyFavorite.currency;
          propertyFavoriteCurrency.innerText = propertyFavorite.currency;
          propertyFavoriteLocation.innerText = propertyFavorite.location;
          

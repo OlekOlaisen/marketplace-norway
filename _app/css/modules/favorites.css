@@ -64,7 +64,7 @@
 }
 
 .main__favorites-item-title {
-   font-size: var(--font-size-large);
+   font-size: var(--font-size-base);
    text-align: center;
    color: black;
    display: block;

@@ -49,7 +49,7 @@ export default async function Properties() {
          propertyTitle.innerText = property.title;
          propertyImage.src = property.images[0]; 
          propertyLocation.innerText = property.location;
-         propertyPrice.innerText = property.currency + " " + property.price;
+         propertyPrice.innerText = parseFloat(property.price).toLocaleString('de-DE') + " " + property.currency;
 
          propertyListing.appendChild(propertyImage);
          propertyListing.appendChild(propertyDetails);
