@@ -6,6 +6,7 @@ export default function Favorites() {
    const jobFavorites = JSON.parse(localStorage.getItem('jobFavorites')) || [];
    const propertyFavorites = JSON.parse(localStorage.getItem('propertyFavorites')) || [];
 
+   
    function saveFavorites() {
       localStorage.setItem('favorites', JSON.stringify(favorites));
    }
@@ -58,7 +59,6 @@ export default function Favorites() {
       const favoritesList = document.createElement('div');
       favoritesList.className = 'main__favorites-list';
 
-
       for (const favorite of favorites) {
          const favoriteItem = document.createElement('div');
          const favoriteDetails = document.createElement('div');
@@ -95,13 +95,11 @@ export default function Favorites() {
             favoriteItem.style.opacity = 1;
          }, 100);
 
-
          removeButton.addEventListener('click', () => {
             removeFavorite(favorite);
             createFavoritesDOM();
          });
       }
-
 
       const favoritesJobsList = document.createElement('div');
       favoritesJobsList.className = 'main__favorites-list';
@@ -147,9 +145,6 @@ export default function Favorites() {
          });
       }
 
-      
-
-
       const favoritesPropertiesList = document.createElement('div');
       favoritesPropertiesList.className = 'main__favorites-list';
 
@@ -172,7 +167,7 @@ export default function Favorites() {
          propertyFavoriteLocation.className = 'main__favorites-item-location';
          removeButton.className = 'main__favorites-item-remove bi bi-x';
 
-         propertyFavoriteTitle.href = 'property.html?id=' + propertyFavorite._id;
+         propertyFavoriteTitle.href = 'propertyDetailed.html?id=' + propertyFavorite._id;
          propertyFavoriteTitle.innerText = propertyFavorite.title;
          propertyFavoriteImage.src = propertyFavorite.images[0];
          propertyFavoritePrice.innerText = parseFloat(propertyFavorite.price).toLocaleString('de-DE') + " " + propertyFavorite.currency;

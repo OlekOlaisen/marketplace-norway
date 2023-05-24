@@ -73,6 +73,10 @@
    border-radius: 5px;
 }
 
+strong {
+   color: var(--color-primary);
+}
+
 
 @media (max-width: 768px) {
    

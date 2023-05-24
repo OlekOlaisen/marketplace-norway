@@ -1,3 +1,15 @@
+.main__favorites {
+  
+}
+
+.main__favorites-background-image {
+   position: fixed;
+   width: 40%;
+   opacity: 0.3;
+   top: 300px;
+   right: 0;
+}
+
 .main__favorites-list {
    display: grid;
    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
