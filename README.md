@@ -10,7 +10,7 @@ The application has the following features:
    - **Jobs**: Users can explore various job opportunities.
    - **Properties**: Users can view available properties.
 
-2. **Sell Item**: Users can list their items for sale(not actually).
+2. **Sell Item**: Users can list their items for sale(not working yet).
 
 3. **Favorites**: Users can save their favorite listings for easy access in the future.
 
@@ -23,6 +23,7 @@ The following technologies were used to develop this application:
 - HTML
 - CSS
 - JavaScript
+- Sanity
 
 ## Installation
 To install the application, you can clone the repository from GitHub:
