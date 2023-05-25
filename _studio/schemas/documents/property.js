@@ -52,10 +52,10 @@ export default {
                type: 'string',
                options: {
                   list: [
-                     { title: 'Shared housing', value: 'shared housing' },
-                     { title: 'Apartment', value: 'apartment' },
-                     { title: 'House', value: 'house' },
-                     { title: 'Cabin', value: 'cabin' },
+                     { title: 'Shared housing', value: 'Shared housing' },
+                     { title: 'Apartment', value: 'Apartment' },
+                     { title: 'House', value: 'House' },
+                     { title: 'Cabin', value: 'Cabin' },
                   ],
                   default: 'house',
                },

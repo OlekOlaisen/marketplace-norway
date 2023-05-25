@@ -11,6 +11,8 @@ body {
 .main__listings {
 	display: flex;
 	flex-flow: column;
+	position: sticky;
+	top: 10rem;
 }
 
 .main__listings-title {
@@ -18,4 +20,9 @@ body {
 	font-family: var(--font-large);
 	font-size: var(--font-size-xlarge);
 	margin-top: 2rem;
+}
+
+.main__listings-listings {
+	margin-top: 10rem;
+	background-color: white;
 }

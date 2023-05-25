@@ -6,6 +6,12 @@
   
 }
 
+.main__background-image-index {
+  width: 100%;
+  position: absolute;
+  z-index: -1;
+}
+
 .main__listings-grid-container {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
@@ -90,4 +96,12 @@
 
 .main__listings-grid-item:hover>.bi-heart-fill {
   color: var(--color-primary);
+}
+
+.main__market-background-image {
+  position: fixed;
+  width: 40%;
+  opacity: 0.3;
+  top: 300px;
+  
 }
