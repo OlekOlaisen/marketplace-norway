@@ -4,7 +4,7 @@
    left: 0;
    right: 0;
    bottom: 0;
-   z-index: 101;
+   z-index: 4;
    background-color: white;
    opacity: 0;
    pointer-events: none;
@@ -23,7 +23,7 @@
    left: -100%;
    width: 100%;
    bottom: 0;
-   z-index: 101;
+   z-index: 4;
    background-color: white;
    background-image: url('../../assets/images/logo.png');
    background-repeat: no-repeat;
@@ -44,7 +44,7 @@
    left: 0;
    right: 0;
    height: 100%;
-   z-index: 101;
+   z-index: 4;
    background-color: white;
    transition: 300ms ease-out;
 }
@@ -60,14 +60,14 @@
    left: 0;
    right: 0;
    bottom: 0;
-   z-index: 101;
+   z-index: 4;
    background-color: white;
    background-image: url('../../assets/images/market.svg');
    background-repeat: no-repeat;
    background-size: 50%;
    background-position: center;
    opacity: 0;
-   transition: 500ms ease-in-out;
+   transition: 300ms ease-in-out;
    pointer-events: none;
 }
 
@@ -78,24 +78,24 @@
 
 .transition-properties {
    position: fixed;
-      top: 0;
-      left: 0;
-      right: 0;
-      bottom: 0;
-      z-index: 101;
-      background-color: white;
-      background-image: url('../../assets/images/properties.svg');
-      background-repeat: no-repeat;
-      background-size: 50%;
-      background-position: center;
-      opacity: 0;
-      transition: 500ms ease-in-out;
-      pointer-events: none;
+   top: 0;
+   left: 0;
+   right: 0;
+   bottom: 0;
+   z-index: 4;
+   background-color: white;
+   background-image: url('../../assets/images/properties.svg');
+   background-repeat: no-repeat;
+   background-size: 50%;
+   background-position: center;
+   opacity: 0;
+   transition: 300ms ease-in-out;
+   pointer-events: none;
 }
 
 .transition-properties.is-active {
    opacity: 1;
-      pointer-events: all;
+   pointer-events: all;
 }
 
 
@@ -105,13 +105,13 @@
    left: 0;
    right: 0;
    height: 100%;
-   z-index: 101;
+   z-index: 4;
    background-color: white;
    background-image: url('../../assets/images/wishlist.svg');
    background-repeat: no-repeat;
    background-size: 50%;
    background-position: center;
-   transition: 500ms ease-out;
+   transition: 300ms ease-out;
 }
 
 .transition-favorites.is-active {
@@ -125,14 +125,14 @@
    left: 0;
    right: 0;
    bottom: 0;
-   z-index: 101;
+   z-index: 4;
    background-color: white;
    background-image: url('../../assets/images/logo.png');
    background-repeat: no-repeat;
    background-size: 50%;
    background-position: center;
    opacity: 0;
-   transition: 500ms ease-in-out;
+   transition: 300ms ease-in-out;
    pointer-events: none;
 }
 
@@ -148,18 +148,38 @@
    left: 0;
    right: 0;
    bottom: 0;
-   z-index: 101;
+   z-index: 4;
    background-color: white;
    background-image: url('../../assets/images/jobs.svg');
    background-repeat: no-repeat;
    background-size: 50%;
    background-position: center;
    opacity: 0;
-   transition: 500ms ease-in-out;
+   transition: 300ms ease-in-out;
    pointer-events: none;
 }
 
 .transition-jobs.is-active {
    opacity: 1;
    pointer-events: all;
+}
+
+
+.transition-newAd {
+   position: fixed;
+   top: 100%;
+   left: 0;
+   right: 0;
+   height: 100%;
+   z-index: 4;
+   background-color: white;
+   background-image: url('../../assets/images/sell-item.svg');
+   background-repeat: no-repeat;
+   background-size: 50%;
+   background-position: center;
+   transition: 300ms ease-out;
+}
+
+.transition-newAd.is-active {
+   top: 0;
 }

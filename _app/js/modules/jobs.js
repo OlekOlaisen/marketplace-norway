@@ -80,11 +80,6 @@ export default async function Jobs() {
             }
          });
 
-         // Apply fade-in effect
-         jobListing.style.opacity = 0;
-         setTimeout(() => {
-            jobListing.style.opacity = 1;
-         }, 100);
       }
 
       return jobsContainer;

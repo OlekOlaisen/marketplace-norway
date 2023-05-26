@@ -6,10 +6,14 @@
 	<title>Sell item</title>
 	<link rel="icon" type="image/x-icon" href="./_app/assets/images/favicon.ico">
 	<link rel="stylesheet" href="/_app/css/main.css" preload>
+	<script type="module" src="./_app/js/main.js"></script>
 	
 </head>
 
 <body>
+
+	<div class="transition transition-newAd is-active"></div>
+
 	<header class="header">
 		<div class="header__top">
 			<a class="header__logo" href="./index.html"><img src="./_app/assets/images/logo.png" alt="marketplace logo"></a>
@@ -31,6 +35,10 @@
 	</header>
 	
 	<main class="main">
+		<div class="main__jobs-background">
+			<img class="main__newAd-background-image" src="./_app/assets/images/sell-item.svg"
+				alt="illustration of a woman shopping online">
+		</div>
 		<div class="main__buttons">
 			<button id="market" class="main__buttons-button"><i class="bi bi-shop-window icons"></i> Market</button>
 			<button id="jobs" class="main__buttons-button"><i class="bi bi-person-workspace icons"></i> Jobs</button>
@@ -43,5 +51,6 @@
 	<footer class="footer"></footer>
 	
 	<script src="/_app/js/modules/new-ad.js"></script>
+	
 </body>
 </html>

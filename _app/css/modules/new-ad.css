@@ -81,3 +81,11 @@ form button[type="submit"]:hover {
 	font-family: var(--font-base);
 	cursor: pointer;
 }
+
+.main__newAd-background-image {
+	position: fixed;
+	width: 40%;
+	opacity: 0.3;
+	bottom: -35px;
+	z-index: -1;
+}

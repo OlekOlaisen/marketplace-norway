@@ -1,4 +1,4 @@
-// https://www.youtube.com/watch?v=ckJ7gdIeebc
+// Used this tutorial to help with transitions: https://www.youtube.com/watch?v=ckJ7gdIeebc
 
 export default function Transitions() {
    window.onload = () => {
@@ -8,7 +8,7 @@ export default function Transitions() {
 
       setTimeout(() => {
          transition.classList.remove('is-active');
-      }, 500);
+      }, 300);
 
       for (let i = 0; i < anchors.length; i++) {
          const anchor = anchors[i];
@@ -21,7 +21,7 @@ export default function Transitions() {
 
             setTimeout(() => {
                window.location.href = target;
-            }, 100);
+            }, 300);
          })
       }
    }

@@ -91,7 +91,7 @@ export default async function Listings() {
     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     favorites.push(listing);
     localStorage.setItem('favorites', JSON.stringify(favorites));
-    renderFavorites();
+    
   }
 
   
@@ -101,7 +101,7 @@ export default async function Listings() {
     if (index > -1) {
       favorites.splice(index, 1);
       localStorage.setItem('favorites', JSON.stringify(favorites));
-      renderFavorites();
+     
     }
   }
 
