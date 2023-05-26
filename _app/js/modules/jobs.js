@@ -14,6 +14,7 @@ export default async function Jobs() {
       'city': city
     }`;
       jobs = await sanity.fetch(query);
+      
    }
 
    function createJobsContainerDOM() {
@@ -73,6 +74,8 @@ export default async function Jobs() {
                favoriteButton.classList.remove('bi-heart-fill');
                favoriteButton.classList.add('bi-heart');
                removeFavorite(job);
+               
+               
             } else {
                favoriteButton.classList.add('bi-heart-fill');
                favoriteButton.classList.remove('bi-heart');
@@ -80,15 +83,14 @@ export default async function Jobs() {
             }
          });
 
-         // Apply fade-in effect
-         jobListing.style.opacity = 0;
-         setTimeout(() => {
-            jobListing.style.opacity = 1;
-         }, 100);
+         
       }
 
+      
       return jobsContainer;
    }
+
+   
 
    function addFavorite(job) {
       const favorites = JSON.parse(localStorage.getItem('jobFavorites')) || [];
@@ -111,13 +113,12 @@ export default async function Jobs() {
       const jobListContainer = createJobsContainerDOM();
       jobList.innerHTML = '';
       jobList.appendChild(jobListContainer);
+      
    }
 
    await fetchJobs();
    renderJobs();
 }
 
-// Call the Jobs function when the DOM is ready
-document.addEventListener('DOMContentLoaded', () => {
    Jobs();
-});
+

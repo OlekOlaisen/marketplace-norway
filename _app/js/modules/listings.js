@@ -77,7 +77,7 @@ export default async function Listings() {
         }
       });
 
-      // Apply fade-in effect
+      // Applyies a fade-in effect
       listingItem.style.opacity = 0;
       setTimeout(() => {
         listingItem.style.opacity = 1;
@@ -104,8 +104,6 @@ export default async function Listings() {
       renderFavorites();
     }
   }
-
-  
   
   function renderListings() {
     const listContainer = createListingContainerDOM();
