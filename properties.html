@@ -12,7 +12,7 @@
 
 <body>
 
-   <div class="transition transition-jobs is-active"></div>
+   <div class="transition transition-properties is-active"></div>
 
    <header class="header">
       <div class="header__top">
@@ -38,6 +38,27 @@
          <div class="main__properties-background">
             <img class="main__properties-background-image" src="./_app/assets/images/properties.svg" alt="illustration of a woman selling a house">
          </div>
+         <section class="main__properties-filter">
+         <div id="filter-container">
+            <label for="property-filter">Property type:</label>
+            <select id="property-filter">
+               <option value="All">All</option>
+               <option value="Shared housing">Shared housing</option>
+               <option value="Apartments">Apartments</option>
+               <option value="Houses">Houses</option>
+               <option value="Cabins">Cabins</option>
+            </select>
+         </div>
+
+         
+
+         </section>
+
+         <label for="sort-price">Sort:</label>
+         <select id="sort-price">
+            <option value="low-to-high">Price: Low to High</option>
+            <option value="high-to-low">Price: High to Low</option>
+         </select>
          <h1 class="main__listings-title">Properties</h1>
          <div class="main__properties">
             

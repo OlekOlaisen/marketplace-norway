@@ -42,8 +42,10 @@ export default async function Listings() {
       listingTitle.href = 'item.html?id=' + listing._id;
       listingTitle.innerText = listing.title;
       listingImage.src = listing.image;
+      listingImage.alt = 'Image of the listed item';
       listingPrice.innerText = `${listing.price.number} ${listing.price.currency}`;
       listingCity.innerText = listing.city;
+      favoriteButton.ariaLabel = 'Add to favorites';
 
       listingItem.appendChild(listingImage);
       listingItem.appendChild(listingDetails);

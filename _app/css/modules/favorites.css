@@ -1,6 +1,4 @@
-.main__favorites {
-  
-}
+
 
 .main__favorites-background-image {
    position: fixed;
@@ -69,7 +67,7 @@
 }
 
 .main__favorites-item-city {
-   color: grey;
+   color: var(--color-secondary);
    font-size: var(--font-size-small);
    text-align: end;
    margin: 0.1rem;
@@ -95,7 +93,7 @@
    text-transform: uppercase;
    font-size: var(--font-size-small);
    text-align: start;
-   color: grey;
+   color: var(--color-secondary);
 }
 
 .main__favorites-item-jobTitle {

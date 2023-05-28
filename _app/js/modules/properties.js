@@ -1,7 +1,8 @@
 import { sanity } from '../sanity.js';
 
+let properties = [];
+
 export default async function Properties() {
-   let properties = [];
    const propertyList = document.querySelector('.main__properties');
 
    async function fetchProperties() {
@@ -22,13 +23,13 @@ export default async function Properties() {
       properties = await sanity.fetch(query);
    }
 
-   function createPropertyContainerDOM() {
+   function createPropertyContainerDOM(propertiesToRender) {
       const propertyContainer = document.createElement('div');
       propertyContainer.className = 'main__property-container';
 
       const favorites = JSON.parse(localStorage.getItem('propertyFavorites')) || [];
 
-      for (const property of properties) {
+      for (const property of propertiesToRender) {
          const propertyListing = document.createElement('div');
          const propertyDetails = document.createElement('div');
          const propertyTitle = document.createElement('a');
@@ -47,7 +48,8 @@ export default async function Properties() {
 
          propertyTitle.href = 'propertyDetailed.html?id=' + property._id;
          propertyTitle.innerText = property.title;
-         propertyImage.src = property.images[0]; 
+         propertyImage.src = property.images[0];
+         propertyImage.alt = 'Image of the property';
          propertyLocation.innerText = property.location;
          propertyPrice.innerText = parseFloat(property.price).toLocaleString('de-DE') + " " + property.currency;
 
@@ -81,12 +83,6 @@ export default async function Properties() {
                addFavorite(property);
             }
          });
-
-         // Apply fade-in effect
-         propertyListing.style.opacity = 0;
-         setTimeout(() => {
-            propertyListing.style.opacity = 1;
-         }, 100);
       }
 
       return propertyContainer;
@@ -110,13 +106,35 @@ export default async function Properties() {
    }
 
    function renderProperties() {
-      const propertyListContainer = createPropertyContainerDOM();
+      const sortSelection = document.getElementById('sort-price').value;
+      const propertyTypeFilter = document.getElementById('property-filter').value;
+
+      let filteredProperties = properties;
+
+      if (propertyTypeFilter !== 'All') {
+         filteredProperties = properties.filter(property => property.propertyType.includes(propertyTypeFilter));
+         document.querySelector('.main__listings-title').innerText = propertyTypeFilter;
+      }
+         else {
+         document.querySelector('.main__listings-title').innerText = "Properties";
+         }
+
+      if (sortSelection === 'low-to-high') {
+         filteredProperties.sort((a, b) => a.price - b.price);
+      } else if (sortSelection === 'high-to-low') {
+         filteredProperties.sort((a, b) => b.price - a.price);
+      }
+
+      const propertyListContainer = createPropertyContainerDOM(filteredProperties);
       propertyList.innerHTML = '';
       propertyList.appendChild(propertyListContainer);
    }
 
    await fetchProperties();
    renderProperties();
+
+   document.getElementById('property-filter').addEventListener('change', renderProperties);
+   document.getElementById('sort-price').addEventListener('change', renderProperties);
 }
 
 document.addEventListener('DOMContentLoaded', () => {

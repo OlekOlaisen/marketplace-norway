@@ -53,9 +53,9 @@ export default {
                options: {
                   list: [
                      { title: 'Shared housing', value: 'Shared housing' },
-                     { title: 'Apartment', value: 'Apartment' },
-                     { title: 'House', value: 'House' },
-                     { title: 'Cabin', value: 'Cabin' },
+                     { title: 'Apartments', value: 'Apartments' },
+                     { title: 'Houses', value: 'Houses' },
+                     { title: 'Cabins', value: 'Cabins' },
                   ],
                   default: 'house',
                },

@@ -5,6 +5,7 @@ export default function Favorites() {
    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
    const jobFavorites = JSON.parse(localStorage.getItem('jobFavorites')) || [];
    const propertyFavorites = JSON.parse(localStorage.getItem('propertyFavorites')) || [];
+   const categoryTitle = document.querySelectorAll('.main__title');
 
    
    function saveFavorites() {
@@ -49,12 +50,16 @@ export default function Favorites() {
       favoritesPropertiesContainer.innerHTML = '';
 
       if (favorites.length === 0 && jobFavorites.length === 0 && propertyFavorites.length === 0) {
+         categoryTitle.classList.remove('main__title');
          const emptyFavorites = document.createElement('p');
          emptyFavorites.innerText = 'No favorites added yet.';
          emptyFavorites.className = 'main__favorites-empty';
          favoritesContainer.appendChild(emptyFavorites);
+         
          return;
       }
+
+      // Lage funksjon for å skjule tittel når hver enkelt vises.
 
       const favoritesList = document.createElement('div');
       favoritesList.className = 'main__favorites-list';
