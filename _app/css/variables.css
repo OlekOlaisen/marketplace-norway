@@ -1,11 +1,7 @@
 :root {
   /* Colors */
   --color-primary: #970747;
-  --color-secondary: #fef4e8;
-  --color-success: #28a745;
-  --color-danger: #dc3545;
-  --color-warning: #ffc107;
-  --color-info: #17a2b8;
+  --color-secondary: #595959;
 
   /* Fonts */
   --font-size-xlarge: 1.5rem;

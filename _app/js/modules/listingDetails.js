@@ -1,7 +1,7 @@
 import { sanity } from '../sanity.js';
 
 
-export default async function itemDetails() {
+export default async function listingDetails() {
    const urlParams = new URLSearchParams(window.location.search);
    const listingId = urlParams.get('id');
    const listingContainer = document.querySelector('.main__listing-container');
@@ -48,6 +48,7 @@ export default async function itemDetails() {
 
 
       image.src = listing.image;
+      image.alt = 'Image of the listed item';
       title.innerText = listing.title;
       document.title = listing.title;
       price.innerText = `${listing.price.number} ${listing.price.currency}`;
@@ -79,4 +80,4 @@ export default async function itemDetails() {
 
 }
 
-itemDetails();
+listingDetails();

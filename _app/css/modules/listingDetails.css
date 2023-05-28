@@ -48,5 +48,5 @@
 
 .main__listing-city {
    font-size: 14px;
-   color: #666;
+   color: var(--color-secondary);
 }

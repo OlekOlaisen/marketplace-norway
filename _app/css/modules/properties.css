@@ -57,7 +57,7 @@
 }
 
 .main__property-location {
-   color: grey;
+   color: var(--color-secondary);
    font-size: var(--font-size-small);
    text-align: end;
    margin: 0.1rem;
@@ -97,7 +97,7 @@
 
 
 .main__favorites-item-location {
-   color: grey;
+   color: var(--color-secondary);
       font-size: var(--font-size-small);
       text-align: end;
       margin: 0.1rem;

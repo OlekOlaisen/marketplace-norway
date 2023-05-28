@@ -3,7 +3,7 @@
 	flex-flow: column;
 	margin: 0 2rem;
 	position: relative;
-	z-index: 5;
+	z-index: 3;
 }
 
 .header__logo {

@@ -52,7 +52,7 @@
 				<label for="location">Location:</label>
 				<input type="text" id="location" name="location" required>
 
-				<label for="image">Image:</label>
+				<label for="image">Images:</label>
 				<input type="file" id="image" name="image" accept="image/*" multiple>
 
 				<label for="state">State:</label>
@@ -61,9 +61,6 @@
 					<option value="Used: Good Condition">Used: Good Condition</option>
 					<option value="Used: Ok Condition">Used: Ok Condition</option>
 				</select>
-
-				<label for="sold">Sold:</label>
-				<input type="checkbox" id="sold" name="sold">
 
 				<button type="submit">Submit</button>
 			</form>

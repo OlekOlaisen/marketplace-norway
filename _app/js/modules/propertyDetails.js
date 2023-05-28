@@ -60,6 +60,7 @@ export default async function propertyDetails() {
       // initially, set the image src to the first image
       image.src = property.images[0];
       title.innerText = property.title;
+      document.title = property.title;
       description.innerText = property.description;
       price.innerHTML = `<strong>Price:</strong> <br> ${parseFloat(property.price).toLocaleString('de-DE')} ${property.currency}`;
       location.innerHTML = `<strong>Location:</strong> <br> ${property.location}`;

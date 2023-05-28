@@ -44,6 +44,7 @@ export default async function Jobs() {
          jobTitle.innerText = job.title;
          jobTitle.href = 'jobDetailed.html?id=' + job._id;
          jobImage.src = job.image;
+         jobImage.alt = 'Job image';
          jobCompany.innerText = job.company;
          jobTitleCompany.innerText = job.jobTitle;
          jobCity.innerText = job.city;
