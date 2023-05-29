@@ -36,9 +36,9 @@ export default async function Listings() {
       listingImage.className = 'main__listings-grid-item-image';
       listingPrice.className = 'main__listings-grid-item-price';
       listingCity.className = 'main__listings-grid-item-city';
-      favoriteButton.className =
-        'main__listings-grid-item-favorite bi bi-heart';
+      favoriteButton.className = 'main__listings-grid-item-favorite bi bi-heart';
 
+      // Sets the href attribute of the listingTitle element to be a URL that leads to the detailed view page for the current listing. 
       listingTitle.href = 'item.html?id=' + listing._id;
       listingTitle.innerText = listing.title;
       listingImage.src = listing.image;
@@ -57,6 +57,7 @@ export default async function Listings() {
 
       gridContainer.appendChild(listingItem);
 
+      // Check if the current listing is a favorite and update the favorite button class accordingly. 
       if (
         favorites.some((favorite) => favorite.title === listing.title)
       ) {
@@ -67,6 +68,7 @@ export default async function Listings() {
           'main__listings-grid-item-favorite bi bi-heart';
       }
 
+      // Add click event listener to favorite button to add or remove from favorites
       favoriteButton.addEventListener('click', () => {
         if (favoriteButton.classList.contains('bi-heart-fill')) {
           favoriteButton.classList.remove('bi-heart-fill');
@@ -79,7 +81,7 @@ export default async function Listings() {
         }
       });
 
-      // Apply fade-in effect
+      // Applies a fade-in effect
       listingItem.style.opacity = 0;
       setTimeout(() => {
         listingItem.style.opacity = 1;
@@ -89,6 +91,7 @@ export default async function Listings() {
     return gridContainer;
   }
 
+  // Adds a listing to local storage as a favorite.
   function addFavorite(listing) {
     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     favorites.push(listing);
@@ -96,7 +99,7 @@ export default async function Listings() {
     
   }
 
-  
+  // Removes a listing from favorites in local storage.
   function removeFavorite(listing) {
     const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
     const index = favorites.findIndex((favorite) => favorite.title === listing.title);
@@ -107,8 +110,7 @@ export default async function Listings() {
     }
   }
 
-  
-  
+
   function renderListings() {
     const listContainer = createListingContainerDOM();
     listingList.innerHTML = '';

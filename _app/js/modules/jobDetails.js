@@ -1,12 +1,16 @@
 import { sanity } from '../sanity.js';
 
 export default async function jobDetails() {
+
+   // Retrieves the job ID from the URL
    const urlParams = new URLSearchParams(window.location.search);
    const listingId = urlParams.get('id');
    const jobsContainer = document.querySelector('.main__jobs-detailed');
 
+   // Initializes a variable to store the fetched job
    let job = null;
 
+   // Function to fetch a job from the sanity client based on its ID
    async function fetchJobById() {
       const query = `*[_type == 'jobListing' && _id == '${listingId}'] {
          _id,
@@ -20,10 +24,8 @@ export default async function jobDetails() {
          'applicationDeadline': applicationDeadline
       }[0]`;
 
-
-
-      job = await sanity.fetch(query);
-      
+      // Fetches the job and stores it in the variable
+      job = await sanity.fetch(query);   
    }
 
    function createJobDOM() {
@@ -60,21 +62,21 @@ export default async function jobDetails() {
       container.appendChild(image);
       container.appendChild(title);
       container.appendChild(jobTitle);
+      container.appendChild(company);
       container.appendChild(description);
       container.appendChild(city);
       container.appendChild(salaryRange);
-      container.appendChild(company);
       container.appendChild(applicationDeadline);
 
       return container;
    }
-
 
    async function renderJob() {
       const container = createJobDOM();
       jobsContainer.appendChild(container);
    }
 
+   // Fetches the job and renders the details.
    await fetchJobById();
    await renderJob();
 }

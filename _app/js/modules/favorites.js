@@ -7,11 +7,12 @@ export default function Favorites() {
    const propertyFavorites = JSON.parse(localStorage.getItem('propertyFavorites')) || [];
    const categoryTitle = document.querySelectorAll('.main__title');
 
-   
+   // Function to save the favorites list in local storage
    function saveFavorites() {
       localStorage.setItem('favorites', JSON.stringify(favorites));
    }
 
+   // Function to remove a favorite from the favorites list
    function removeFavorite(listing) {
       const index = favorites.findIndex((favorite) => favorite.title === listing.title);
       if (index !== -1) {
@@ -20,10 +21,12 @@ export default function Favorites() {
       }
    }
 
+   // Function to save the job favorites list in local storage
    function saveJobFavorites() {
       localStorage.setItem('jobFavorites', JSON.stringify(jobFavorites));
    }
-
+   
+   // Function to remove a job favorite from the job favorites list
    function removeJobFavorite(job) {
       const index = jobFavorites.findIndex((favorite) => favorite.title === job.title);
       if (index !== -1) {
@@ -32,10 +35,12 @@ export default function Favorites() {
       }
    }
 
+   // Function to save the property favorites list in local storage
    function savePropertyFavorites() {
       localStorage.setItem('propertyFavorites', JSON.stringify(propertyFavorites));
    }
 
+    // Function to remove a property favorite from the property favorites list
    function removePropertyFavorite(property) {
       const index = propertyFavorites.findIndex((favorite) => favorite.title === property.title);
       if (index !== -1) {
@@ -49,6 +54,7 @@ export default function Favorites() {
       favoritesJobsContainer.innerHTML = '';
       favoritesPropertiesContainer.innerHTML = '';
 
+      // If there are no favorites, display the message: "No favorites added yet.".
       if (favorites.length === 0 && jobFavorites.length === 0 && propertyFavorites.length === 0) {
          categoryTitle.classList.remove('main__title');
          const emptyFavorites = document.createElement('p');
@@ -189,6 +195,8 @@ export default function Favorites() {
          propertyFavoriteItem.appendChild(removeButton);
          favoritesPropertiesList.appendChild(propertyFavoriteItem);
 
+
+         // Adds event listener to the remove button
          removeButton.addEventListener('click', () => {
             removePropertyFavorite(propertyFavorite);
             createFavoritesDOM();
@@ -201,10 +209,7 @@ export default function Favorites() {
       favoritesPropertiesContainer.appendChild(favoritesPropertiesList);
    }
 
-   
-
-   
-
+   // Calls the function to create the favorites DOM when the page loads
    createFavoritesDOM();
 
    return {

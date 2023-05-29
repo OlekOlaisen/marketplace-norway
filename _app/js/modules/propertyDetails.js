@@ -1,12 +1,16 @@
 import { sanity } from '../sanity.js';
 
 export default async function propertyDetails() {
+
+   // Retrieves the listing ID from the URL
    const urlParams = new URLSearchParams(window.location.search);
    const listingId = urlParams.get('id');
    const PropertyContainer = document.querySelector('.main__properties-detailed');
 
+   // Initializes a variable to store the fetched property
    let property = null;
 
+   // Fetches a property from sanity based on it's ID.
    async function fetchPropertyById() {
       const query = `*[_type == 'propertyListing' && _id == '${listingId}'] {
          _id,
@@ -21,6 +25,7 @@ export default async function propertyDetails() {
          'propertyType': propertyType[],
       }[0]`;
 
+      // Fetches the property and stores it in the variable.
       property = await sanity.fetch(query);
    }
 
@@ -57,7 +62,7 @@ export default async function propertyDetails() {
       previousButton.className = 'previous-button bi bi-arrow-left';
       imageCounter.className = 'image-counter';
 
-      // initially, set the image src to the first image
+      // Sets the image source to the first image
       image.src = property.images[0];
       title.innerText = property.title;
       document.title = property.title;
@@ -69,7 +74,6 @@ export default async function propertyDetails() {
       propertyType.innerHTML = `<strong>Property Type:</strong> <br>${property.propertyType.join(', ')}`;
       imageCounter.innerText = `1/${property.images.length}`;
 
-      // Add elements to the new container
       imageContainer.appendChild(previousButton);
       imageContainer.appendChild(image);
       imageContainer.appendChild(nextButton);
@@ -86,25 +90,29 @@ export default async function propertyDetails() {
       container.appendChild(detailsContainer);
       container.appendChild(description);
       
-
       return { container, image, nextButton, previousButton, imageCounter };
    }
 
+    // Function to fetch and display the property details
    async function renderProperty() {
+
       // fetch all properties
       await fetchPropertyById();
 
       const { container, image, nextButton, previousButton, imageCounter } = createPropertyDOM();
       PropertyContainer.appendChild(container);
 
+       // Initialize the current image index
       let currentIndex = 0;
 
+      // Click event for the next button.
       nextButton.addEventListener('click', () => {
          currentIndex = (currentIndex + 1) % property.images.length;
          image.src = property.images[currentIndex];
          imageCounter.innerText = `${currentIndex + 1}/${property.images.length}`;
       });
 
+      // Click event for the previous button.
       previousButton.addEventListener('click', () => {
          currentIndex = (currentIndex - 1 + property.images.length) % property.images.length;
          image.src = property.images[currentIndex];
@@ -112,6 +120,7 @@ export default async function propertyDetails() {
       });
    }
 
+   // Renders the property details when the page loads
    await renderProperty();
 }
 
