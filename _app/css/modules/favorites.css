@@ -1,4 +1,6 @@
-
+.hidden {
+   display: none;
+}
 
 .main__favorites-background-image {
    position: fixed;

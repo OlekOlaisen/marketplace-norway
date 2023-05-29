@@ -48,6 +48,7 @@ export default async function Jobs() {
          jobCompany.innerText = job.company;
          jobTitleCompany.innerText = job.jobTitle;
          jobCity.innerText = job.city;
+         favoriteButton.setAttribute('aria-label', 'Add to favorites');
          
          jobListing.appendChild(jobImage);
          jobListing.appendChild(jobDetails);
@@ -90,8 +91,7 @@ export default async function Jobs() {
       function addFavorite(job) {
          const favorites = JSON.parse(localStorage.getItem('jobFavorites')) || [];
          favorites.push(job);
-         localStorage.setItem('jobFavorites', JSON.stringify(favorites));
-         renderJobs();
+         localStorage.setItem('jobFavorites', JSON.stringify(favorites));   
       }
       // Removes a job from favorites in local storage.
       function removeFavorite(job) {
@@ -100,7 +100,6 @@ export default async function Jobs() {
          if (index > -1) {
             favorites.splice(index, 1);
             localStorage.setItem('jobFavorites', JSON.stringify(favorites));
-            renderJobs();
          }
       }
       

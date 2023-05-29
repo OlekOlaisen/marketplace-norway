@@ -59,6 +59,7 @@ export default async function Properties() {
          propertyImage.alt = 'Image of the property';
          propertyLocation.innerText = property.location;
          propertyPrice.innerText = parseFloat(property.price).toLocaleString('de-DE') + " " + property.currency;
+         favoriteButton.setAttribute('aria-label', 'Add to favorites');
          
          propertyListing.appendChild(propertyImage);
          propertyListing.appendChild(propertyDetails);
@@ -102,7 +103,6 @@ export default async function Properties() {
          const favorites = JSON.parse(localStorage.getItem('propertyFavorites')) || [];
          favorites.push(property);
          localStorage.setItem('propertyFavorites', JSON.stringify(favorites));
-         renderProperties();
       }
       
       // Removes a property from favorites in local storage.
@@ -112,7 +112,6 @@ export default async function Properties() {
          if (index > -1) {
             favorites.splice(index, 1);
             localStorage.setItem('propertyFavorites', JSON.stringify(favorites));
-            renderProperties();
          }
       }
       

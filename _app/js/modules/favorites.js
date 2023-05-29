@@ -5,7 +5,7 @@ export default function Favorites() {
    const favorites = JSON.parse(localStorage.getItem('favorites')) || [];
    const jobFavorites = JSON.parse(localStorage.getItem('jobFavorites')) || [];
    const propertyFavorites = JSON.parse(localStorage.getItem('propertyFavorites')) || [];
-   const categoryTitle = document.querySelectorAll('.main__title');
+   const categoryTitles = document.querySelectorAll('.main__title');
 
    // Function to save the favorites list in local storage
    function saveFavorites() {
@@ -56,16 +56,20 @@ export default function Favorites() {
 
       // If there are no favorites, display the message: "No favorites added yet.".
       if (favorites.length === 0 && jobFavorites.length === 0 && propertyFavorites.length === 0) {
-         categoryTitle.classList.remove('main__title');
+         for (const categoryTitle of categoryTitles) {
+            categoryTitle.classList.add('hidden'); // Add a class to hide each element
+         }
          const emptyFavorites = document.createElement('p');
          emptyFavorites.innerText = 'No favorites added yet.';
          emptyFavorites.className = 'main__favorites-empty';
          favoritesContainer.appendChild(emptyFavorites);
          
          return;
+      } else {
+         for (const categoryTitle of categoryTitles) {
+            categoryTitle.classList.remove('hidden'); // Remove the class to show each element
+         }
       }
-
-      // Lage funksjon for å skjule tittel når hver enkelt vises.
 
       const favoritesList = document.createElement('div');
       favoritesList.className = 'main__favorites-list';
@@ -87,7 +91,7 @@ export default function Favorites() {
          favoriteCity.className = 'main__favorites-item-city';
          removeButton.className = 'main__favorites-item-remove bi bi-x';
 
-         favoriteTitle.href = 'item.html?id=' + favorite._id;
+         favoriteTitle.href = 'marketDetailed.html?id=' + favorite._id;
          favoriteTitle.innerText = favorite.title;
          favoriteImage.src = favorite.image;
          favoriteCity.innerText = favorite.city;
@@ -100,11 +104,6 @@ export default function Favorites() {
          favoriteDetails.appendChild(favoritePrice);
          favoriteItem.appendChild(removeButton);
          favoritesList.appendChild(favoriteItem);
-
-         favoriteItem.style.opacity = 0;
-         setTimeout(() => {
-            favoriteItem.style.opacity = 1;
-         }, 100);
 
          removeButton.addEventListener('click', () => {
             removeFavorite(favorite);
@@ -185,8 +184,6 @@ export default function Favorites() {
          propertyFavoriteCurrency.innerText = propertyFavorite.currency;
          propertyFavoriteLocation.innerText = propertyFavorite.location;
          
-         
-
          propertyFavoriteItem.appendChild(propertyFavoriteImage);
          propertyFavoriteItem.appendChild(propertyFavoriteDetails);
          propertyFavoriteDetails.appendChild(propertyFavoriteLocation);
@@ -195,15 +192,13 @@ export default function Favorites() {
          propertyFavoriteItem.appendChild(removeButton);
          favoritesPropertiesList.appendChild(propertyFavoriteItem);
 
-
          // Adds event listener to the remove button
          removeButton.addEventListener('click', () => {
             removePropertyFavorite(propertyFavorite);
             createFavoritesDOM();
          });
       }
-
-   
+  
       favoritesContainer.appendChild(favoritesList);
       favoritesJobsContainer.appendChild(favoritesJobsList);
       favoritesPropertiesContainer.appendChild(favoritesPropertiesList);

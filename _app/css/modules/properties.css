@@ -47,7 +47,7 @@
    filter: brightness(100%);
 }
 
-.main__properties-container:hover .main__property-listing:not(:hover) .main__property-image {
+.main__property-container:hover .main__property-listing:not(:hover) .main__property-image {
    filter: brightness(60%);
 }
 

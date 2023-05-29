@@ -39,13 +39,13 @@ export default async function Listings() {
       favoriteButton.className = 'main__listings-grid-item-favorite bi bi-heart';
 
       // Sets the href attribute of the listingTitle element to be a URL that leads to the detailed view page for the current listing. 
-      listingTitle.href = 'item.html?id=' + listing._id;
+      listingTitle.href = 'marketDetailed.html?id=' + listing._id;
       listingTitle.innerText = listing.title;
       listingImage.src = listing.image;
       listingImage.alt = 'Image of the listed item';
       listingPrice.innerText = `${listing.price.number} ${listing.price.currency}`;
       listingCity.innerText = listing.city;
-      favoriteButton.ariaLabel = 'Add to favorites';
+      favoriteButton.setAttribute('aria-label', 'Add to favorites');
 
       listingItem.appendChild(listingImage);
       listingItem.appendChild(listingDetails);

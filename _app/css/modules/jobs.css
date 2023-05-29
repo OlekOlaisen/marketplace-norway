@@ -1,9 +1,9 @@
 .main__jobs-background-image {
    position: fixed;
-      width: 40%;
-      opacity: 0.3;
-      top: 300px;
-      right: 0;
+   width: 40%;
+   opacity: 0.3;
+   top: 300px;
+   right: 0;
 }
 
 .main__jobs-container {
