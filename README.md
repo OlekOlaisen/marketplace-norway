@@ -1,37 +1,40 @@
-# Marketplace Norway
+<h1 align="center">Marketplace Norway</h1>
 
-Marketplace Norway is a web application that provides a platform for users to explore different sections such as Market, Jobs, and Properties. Users can also sell their items and save their favorites.
+<p align="center"> Marketplace Norway is a web application that allows users to navigate the Norwegian marketplace with ease. It provides sections for the general market, job listings, and properties for sale or rent. Users can also post new ads and manage their favorite listings.
 
 ## Features
+
 The application has the following features:
 
-1. Explore different sections:
-   - **Market**: Users can browse items available in the market.
-   - **Jobs**: Users can explore various job opportunities.
-   - **Properties**: Users can view available properties.
-
-2. **Sell Item**: Users can list their items for sale(not working yet).
-
-3. **Favorites**: Users can save their favorite listings for easy access in the future.
+- Browse various market listings.
+- Explore job opportunities.
+- Search for properties based on type (Shared housing, Apartments, Houses, Cabins) and sort them by price (Low to High, High to Low).
+- Post new ads to the marketplace (not currently working). New ads are added through sanity studio.
+- Manage a list of favorite listings.
 
 ## Minimum Viable Product (MVP)
-The MVP for this project is a functioning website that allows users to navigate different sections, and save their favorite listings.
+
+The MVP for this project would be a functioning website that allows users to navigate through different sections of the marketplace, explore job listings, and search for properties. Users should also be able to post new ads and manage their favorite listings.
 
 ## Technologies Used
+
 The following technologies were used to develop this application:
 
 - HTML
 - CSS
 - JavaScript
 - Sanity
+<br> 
 
 ## Installation
-To install the application, you can clone the repository from GitHub:
 
-$ git clone https://github.com/OlekOlaisen/marketplace.git
+To install the application, you can clone the repository from GitHub:<br> 
+$ git clone https://github.com/YourGithubUsername/MarketplaceNorway.git
 
-Then, open the index.html file in your web browser to use the application.
+Then, open the `index.html` file in your web browser to use the application.
+</p>
 
 ## Demo
-You can see a live demo of the application at: [Marketplace](https://marketplace-norway.netlify.app/)
+
+You can see a live demo of the application at: [Marketplace Norway](https://marketplace-norway.netlify.app/)
 
