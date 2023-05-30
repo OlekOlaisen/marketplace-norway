@@ -4,6 +4,12 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description"
+	content=
+	"Discover and explore a wide range of products, services, jobs and properties at Marketplace. 
+	Your one-stop solution for all your buying, selling and job seeking needs. 
+	Navigate the user-friendly interface and dive into the extensive listings to find your perfect match."
+	>
 	<title>Marketplace</title>
 	<link rel="icon" type="image/x-icon" href="./_app/assets/images/favicon.ico">
 	<link rel="stylesheet" href="/_app/css/main.css" preload>
@@ -11,55 +17,55 @@
 </head>
 
 <body>
-
+	
 	<div class="transition transition-home is-active"></div>
-
+	
 	<header class="header" role="banner">
 		<div class="header__top">
 			<a class="header__logo" href="./index.html"><img src="./_app/assets/images/logo.png" alt="marketplace logo"></a>
 			<button class="header__top-toggle" tabindex="0" aria-label="Open Menu"><i class="bi bi-list"></i></button>
 		</div>
-	
+		
 		<nav class="header__bottom" role="navigation">
 			<div class="header__bottom-left">
 				<a class="header__bottom-left-link" href="./market.html" tabindex="0"
-					aria-label="Link to Market Page">Market</a>
+				aria-label="Link to Market Page">Market</a>
 				<a class="header__bottom-left-link" href="./jobs.html" tabindex="0" aria-label="Link to Jobs Page">Jobs</a>
 				<a class="header__bottom-left-link" href="./properties.html" tabindex="0"
-					aria-label="Link to Properties Page">Properties</a>
+				aria-label="Link to Properties Page">Properties</a>
 			</div>
 			<div class="header__bottom-right">
 				<a class="header__bottom-right-link" href="./new-ad.html" tabindex="0" aria-label="Link to Sell Item Page"><i
-						class="bi bi-plus-circle"></i> Sell item</a>
-				<a class="header__bottom-right-link" href="./favorites.html" tabindex="0"
+					class="bi bi-plus-circle"></i> Sell item</a>
+					<a class="header__bottom-right-link" href="./favorites.html" tabindex="0"
 					aria-label="Link to Favorites Page"><i id="favorites-icon" class="bi bi-heart"></i> Favorites</a>
+				</div>
+			</nav>
+		</header>
+		
+		<main class="main">
+			<div class="main__background">
+				<img class="main__background-image-index" src="./_app/assets/images/background.jpg" alt="Background image">
 			</div>
-		</nav>
-	</header>
-
-	<main class="main">
-		<div class="main__background">
-			<img class="main__background-image-index" src="./_app/assets/images/background.jpg" alt="Background image">
-		</div>
-		<div class="main__listings">
-			<section id="listings" class="main__listings-listings">
-				<h1 class="main__listings-title">Market</h1>
-				<div class="main__listings-results"></div>
-			</section>
-
-
-			<section id="jobs" class="main__listings-jobs">
-				<h1 class="main__listings-title">Jobs</h1>
-				<div class="main__jobs"></div>
-			</section>
-
-
-			<section id="properties" class="main__listings-properties">
-				<h1 class="main__listings-title">Properties</h1>
-				<div class="main__properties"></div>
-			</section>
-		</div>
-
+			<div class="main__listings">
+				<section id="listings" class="main__listings-listings">
+					<h1 class="main__listings-title">Market</h1>
+					<div class="main__listings-results"></div>
+				</section>
+				
+				
+				<section id="jobs" class="main__listings-jobs">
+					<h1 class="main__listings-title">Jobs</h1>
+					<div class="main__jobs"></div>
+				</section>
+				
+				
+				<section id="properties" class="main__listings-properties">
+					<h1 class="main__listings-title">Properties</h1>
+					<div class="main__properties"></div>
+				</section>
+			</div>
+			
 		</div>
 	</main>
 	<footer class="footer"></footer>
