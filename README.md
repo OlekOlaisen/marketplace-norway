@@ -14,7 +14,7 @@ The application has the following features:
 
 ## Minimum Viable Product (MVP)
 
-The MVP for this project would be a functioning website that allows users to navigate through different sections of the marketplace, explore job listings, and search for properties. Users should also be able to post new ads and manage their favorite listings.
+The MVP for this project would be a functioning website that allows users to navigate through different sections of the marketplace, explore job listings, and search for properties.
 
 ## Technologies Used
 
