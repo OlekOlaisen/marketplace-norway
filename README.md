@@ -21,7 +21,6 @@ The following technologies were used to develop this application:
 - CSS
 - JavaScript
 - Sanity
-<br> 
 ```
 ## Minimum Viable Product (MVP)
 
