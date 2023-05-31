@@ -89,3 +89,10 @@ form button[type="submit"]:hover {
 	bottom: -35px;
 	z-index: -1;
 }
+
+
+@media (max-width: 768px) {
+	.main__newAd-background-image {
+		display: none;
+	}
+}

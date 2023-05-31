@@ -97,3 +97,10 @@
 .main__jobs-listing:hover .main__jobs-favorite.bi-heart-fill {
    color: var(--color-primary);
 }
+
+
+@media (max-width: 768px) {
+   .main__jobs-background-image {
+      display: none;
+   }
+}
