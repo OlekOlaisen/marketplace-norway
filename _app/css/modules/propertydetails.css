@@ -79,7 +79,6 @@ strong {
    color: var(--color-primary);
 }
 
-
 @media (max-width: 768px) {
    
    .main__properties-detailed-container {

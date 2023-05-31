@@ -115,47 +115,43 @@ export default async function Properties() {
          }
       }
       
-      // organizes and displays properties on the page based on filters and sorting options.
-      function renderProperties() {
-         const sortElement = document.getElementById('sort-price');
-         const filterElement = document.getElementById('property-filter');
-         let filteredProperties = properties;
-         
-         if (sortElement && filterElement) {
-            sortElement.addEventListener('change', renderProperties);
-            filterElement.addEventListener('change', renderProperties);
-            
-            // Fetches the current values of the sort and filter elements.
-            const sortSelection = sortElement.value;
-            const propertyTypeFilter = filterElement.value;
-            
-            // If a property type filter is selected (other than 'All'), filter the properties by type.
-            if (propertyTypeFilter !== 'All') {
-               filteredProperties = properties.filter(property => property.propertyType.includes(propertyTypeFilter));
-               // Updates the page title to reflect the current property type filter.
-               document.querySelector('.main__listings-title').innerText = propertyTypeFilter;
-            } else {
-               document.querySelector('.main__listings-title').innerText = "Properties";
-            }
-            
-            // If a sort option is selected, it sorts the properties by price.
-            if (sortSelection === 'low-to-high') {
-               filteredProperties.sort((a, b) => a.price - b.price);
-            } else if (sortSelection === 'high-to-low') {
-               filteredProperties.sort((a, b) => b.price - a.price);
-            }
-         }
-         
-         // Once properties are filtered and sorted, creates a container DOM element for them and displays thøem on the page.
-         const propertyListContainer = createPropertyContainerDOM(filteredProperties);
-         propertyList.innerHTML = '';
-         propertyList.appendChild(propertyListContainer);
+   async function renderProperties() {
+      const sortSelection = document.getElementById('sort-price').value;
+
+      const filterContainer = document.getElementById('property-filter');
+      const checkboxes = Array.from(filterContainer.querySelectorAll('input[type="checkbox"]'));
+
+      const checkedValues = checkboxes.filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+
+      let filteredProperties = properties;
+
+      if (checkedValues.length > 0) {
+         filteredProperties = properties.filter(property => checkedValues.some(value => property.propertyType.includes(value)));
+         // Update the title to the selected property types
+         document.querySelector('.main__listings-title').innerText = checkedValues.join(", ");
+      } else {
+         // Reset the title to "Properties" when no filter is selected
+         document.querySelector('.main__listings-title').innerText = "All properties";
       }
-      
-      await fetchProperties();
-      renderProperties();
+
+      if (sortSelection === 'low-to-high') {
+         filteredProperties.sort((a, b) => a.price - b.price);
+      } else if (sortSelection === 'high-to-low') {
+         filteredProperties.sort((a, b) => b.price - a.price);
+      }
+
+      const propertyListContainer = createPropertyContainerDOM(filteredProperties);
+      propertyList.innerHTML = '';
+      propertyList.appendChild(propertyListContainer);
    }
-   
+
+   // Add event listener to the checkboxes
+   document.getElementById('property-filter').addEventListener('change', renderProperties);
+   document.getElementById('sort-price').addEventListener('change', renderProperties);
+
+   await fetchProperties();
+   renderProperties();
+}
+
+
    Properties();
-   
-   
