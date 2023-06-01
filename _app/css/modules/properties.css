@@ -102,6 +102,9 @@
    font-size: var(--font-size-small);
    text-align: end;
    margin: 0.1rem;
+      font-size: var(--font-size-small);
+      text-align: end;
+      margin: 0.1rem;
 }
 
 .main__properties-options {
