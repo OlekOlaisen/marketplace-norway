@@ -1,12 +1,13 @@
 import { sanity } from '../sanity.js';
 
-
-
 export default async function Properties() {
    const propertyList = document.querySelector('.main__properties');
+   const filterCheckboxes = Array.from(document.querySelectorAll('#filter-container input[name="property-type"]'));
+   const sortElement = document.getElementById('sort-price');
 
    let properties = [];
 
+   // Fetches the properties from the database using Sanity.io
    async function fetchProperties() {
       const query = `*[_type == 'propertyListing']{
          _id,
@@ -25,16 +26,42 @@ export default async function Properties() {
       properties = await sanity.fetch(query);
    }
 
-   // Generates DOM elements for each property and returns the container element.
-   function createPropertyContainerDOM(properties) {
+   // Retrieves the selected property types from the filter checkboxes
+   function getSelectedPropertyTypes() {
+      return filterCheckboxes.filter(checkbox => checkbox.checked).map(checkbox => checkbox.value);
+   }
 
-      // Create the main container and get favorite properties from local storage.
+   // Filters the properties based on the selected property types
+   function filterProperties(properties) {
+      const selectedPropertyTypes = getSelectedPropertyTypes();
+
+      if (selectedPropertyTypes.length === 0) {
+         return properties;
+      } else {
+         return properties.filter(property => property.propertyType.some(type => selectedPropertyTypes.includes(type)));
+      }
+   }
+
+   // Sorts the properties based on the selected sorting option
+   function sortProperties(properties) {
+      const sortSelection = sortElement ? sortElement.value : null;
+
+      if (sortSelection === 'low-to-high') {
+         return properties.slice().sort((a, b) => a.price - b.price);
+      } else if (sortSelection === 'high-to-low') {
+         return properties.slice().sort((a, b) => b.price - a.price);
+      } else {
+         return properties;
+      }
+   }
+
+   // Creates the DOM elements for each property and returns the container element
+   function createPropertyContainerDOM(properties) {
       const propertyContainer = document.createElement('div');
       propertyContainer.className = 'main__property-container';
 
       const favorites = JSON.parse(localStorage.getItem('propertyFavorites')) || [];
 
-      // Loops over each property in the properties array
       for (const property of properties) {
          const propertyListing = document.createElement('div');
          const propertyDetails = document.createElement('div');
@@ -52,7 +79,6 @@ export default async function Properties() {
          propertyPrice.className = 'main__property-price';
          favoriteButton.className = 'main__property-favorite bi bi-heart';
 
-         // Sets the href attribute of the propertyTitle element to be a URL that leads to the detailed view page for the current property.
          propertyTitle.href = 'propertyDetailed.html?id=' + property._id;
          propertyTitle.innerText = property.title;
          propertyImage.src = property.images[0];
@@ -71,7 +97,6 @@ export default async function Properties() {
 
          propertyContainer.appendChild(propertyListing);
 
-         // Checks if the current property is in the favorites, if so, updates the favorite button's class to "bi bi-heart-fill". 
          if (
             favorites.some((favorite) => favorite.title === property.title)
          ) {
@@ -81,7 +106,6 @@ export default async function Properties() {
             favoriteButton.className = 'main__property-favorite bi bi-heart';
          }
 
-         // Adds event listener to the favorite button, which toggles the favorite state of the property on click
          favoriteButton.addEventListener('click', () => {
             if (favoriteButton.classList.contains('bi-heart-fill')) {
                favoriteButton.classList.remove('bi-heart-fill');
@@ -98,14 +122,14 @@ export default async function Properties() {
       return propertyContainer;
    }
 
-   // Adds a property to local storage as a favorite.
+   // Adds a property to the favorites list in local storage
    function addFavorite(property) {
       const favorites = JSON.parse(localStorage.getItem('propertyFavorites')) || [];
       favorites.push(property);
       localStorage.setItem('propertyFavorites', JSON.stringify(favorites));
    }
 
-   // Removes a property from favorites in local storage.
+   // Removes a property from the favorites list in local storage
    function removeFavorite(property) {
       const favorites = JSON.parse(localStorage.getItem('propertyFavorites')) || [];
       const index = favorites.findIndex((favorite) => favorite.title === property.title);
@@ -115,46 +139,45 @@ export default async function Properties() {
       }
    }
 
-   // organizes and displays properties on the page based on filters and sorting options.
+   // Updates the title based on the selected property types
+   function updateTitle(selectedPropertyTypes) {
+   const titleElement = document.querySelector('.main__listings-title-properties');
+   if (selectedPropertyTypes.length === filterCheckboxes.length) {
+      titleElement.innerText = "All Properties";
+   } else if (selectedPropertyTypes.length > 0) {
+      titleElement.innerText = selectedPropertyTypes.join(', ');
+   } else {
+      titleElement.innerText = "All Properties";
+   }
+}
+
+
+   // Renders the properties on the page
    function renderProperties() {
-      const sortElement = document.getElementById('sort-price');
-      const filterElement = document.getElementById('property-filter');
-      let filteredProperties = properties;
+      const filteredProperties = filterProperties(properties);
+      const sortedProperties = sortProperties(filteredProperties);
 
-      if (sortElement && filterElement) {
-         sortElement.addEventListener('change', renderProperties);
-         filterElement.addEventListener('change', renderProperties);
-
-         // Fetches the current values of the sort and filter elements.
-         const sortSelection = sortElement.value;
-         const propertyTypeFilter = filterElement.value;
-
-         // If a property type filter is selected (other than 'All'), filter the properties by type.
-         if (propertyTypeFilter !== 'All') {
-            filteredProperties = properties.filter(property => property.propertyType.includes(propertyTypeFilter));
-            // Updates the page title to reflect the current property type filter.
-            document.querySelector('.main__listings-title').innerText = propertyTypeFilter;
-         } else {
-            document.querySelector('.main__listings-title').innerText = "Properties";
-         }
-
-         // If a sort option is selected, it sorts the properties by price.
-         if (sortSelection === 'low-to-high') {
-            filteredProperties.sort((a, b) => a.price - b.price);
-         } else if (sortSelection === 'high-to-low') {
-            filteredProperties.sort((a, b) => b.price - a.price);
-         }
-      }
-
-      // Once properties are filtered and sorted, creates a container DOM element for them and displays thøem on the page.
-      const propertyListContainer = createPropertyContainerDOM(filteredProperties);
+      const propertyListContainer = createPropertyContainerDOM(sortedProperties);
       propertyList.innerHTML = '';
       propertyList.appendChild(propertyListContainer);
+
+      const selectedPropertyTypes = getSelectedPropertyTypes();
+      updateTitle(selectedPropertyTypes);
    }
 
+   // Add change event listeners to filter checkboxes
+   filterCheckboxes.forEach(checkbox => {
+      checkbox.addEventListener('change', renderProperties);
+   });
+
+   // Add change event listener to sort element if present
+   if (sortElement) {
+      sortElement.addEventListener('change', renderProperties);
+   }
+
+   // Fetch properties from the database and render them
    await fetchProperties();
    renderProperties();
 }
 
 Properties();
-

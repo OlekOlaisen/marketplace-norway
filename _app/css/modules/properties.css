@@ -1,11 +1,10 @@
-
 .main__properties-background-image {
    position: fixed;
    width: 40%;
    opacity: 0.3;
    right: 0;
+   z-index: -1;
 }
-
 
 .main__property-container {
    display: grid;
@@ -28,6 +27,13 @@
    position: relative;
    transition: ease 0.3s;
    overflow: hidden;
+}
+
+.main__listings-title-properties {
+   text-align: center;
+   font-family: var(--font-large);
+   font-size: var(--font-size-xlarge);
+   margin-top: 2rem;
 }
 
 .main__property-listing:hover {
@@ -95,64 +101,43 @@
    color: var(--color-primary);
 }
 
-
 .main__favorites-item-location {
    color: var(--color-secondary);
-<<<<<<< HEAD
    font-size: var(--font-size-small);
    text-align: end;
    margin: 0.1rem;
-      font-size: var(--font-size-small);
-      text-align: end;
-      margin: 0.1rem;
 }
 
 .main__properties-options {
    display: flex;
-   flex-flow: column;
+   flex-direction: column;
    justify-content: space-between;
+   align-items: center;
    margin: 2rem 0;
    padding: 0 1rem;
    gap: 1rem;
    font-size: var(--font-size-base);
 }
 
-.main__properties-filter,
-.main__properties-sorting {
-   width: 100px;
+.main__properties-filter {
    display: flex;
-   justify-content: space-between;
+   flex-direction: column;
+}
+
+.filter-checkboxes {
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+}
+
+.filter-checkboxes div {
+   display: flex;
    align-items: center;
+   gap: 5px;
 }
 
-.main__properties-sorting {
-   display: flex;
-   flex-flow: column;
-}
-
-.main__properties-filter select,
-.main__properties-sorting select {
-   width: 150px;
-   padding: 0.5rem;
-   border: 1px solid #ccc;
-   border-radius: 0.3rem;
-}
-
-#property-filter {
-   display: flex;
-   flex-flow: column;
-}
-
-#sort-price {
-  background-color: transparent;
-}
-
-option:checked {
-   background-color: red;
-}
-
-#cabins:checked {
-   background-color: red;
+.filter-checkboxes input {
+   margin-right: 0.5em;
 }
 
 .main__properties-filter-checkbox {
@@ -162,29 +147,23 @@ option:checked {
    width: 150px;
 }
 
-.main__properties-filter-label {
-   
+.main__properties-filter-label-title {
+   font-weight: bold;
 }
 
+.main__properties-sort-label {
+   font-weight: bold;
+}
 
+/* Media queries */
 @media (max-width: 768px) {
    .main__properties-background-image {
       display: none;
    }
-
-      .main__properties-options {
-         display: flex;
-         flex-direction: column;
-         align-items: center;
-
-      }
    
-    
+   .main__properties-options {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+   }
 }
-
-=======
-      font-size: var(--font-size-small);
-      text-align: end;
-      margin: 0.1rem;
-}
->>>>>>> parent of d82d807 (fixed images on properties)

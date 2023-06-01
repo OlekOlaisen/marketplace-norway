@@ -4,8 +4,8 @@
    <meta charset="UTF-8">
    <meta name="viewport" content="width=device-width, initial-scale=1.0">
    <meta name="description" content="Discover and explore a wide range of products, services, jobs and properties at Marketplace. 
-   	Your one-stop solution for all your buying, selling and job seeking needs. 
-   	Navigate the user-friendly interface and dive into the extensive listings to find your perfect match.">
+   Your one-stop solution for all your buying, selling and job seeking needs. 
+   Navigate the user-friendly interface and dive into the extensive listings to find your perfect match.">
    <title>Properties</title>
    <link rel="icon" type="image/x-icon" href="./_app/assets/images/favicon.ico">
    <link rel="stylesheet" href="/_app/css/main.css" preload>
@@ -13,9 +13,9 @@
 </head>
 
 <body>
-
+   
    <div class="transition transition-properties is-active"></div>
-
+   
    <header class="header">
       <div class="header__top">
          <a class="header__logo" href="./index.html"><img src="./_app/assets/images/logo.png"
@@ -40,31 +40,49 @@
          <div class="main__properties-background">
             <img class="main__properties-background-image" src="./_app/assets/images/properties.svg" alt="illustration of a woman selling a house">
          </div>
-         <section class="main__properties-filter">
-         <div id="filter-container">
-            <label for="property-filter">Property type:</label>
-            <select id="property-filter">
-               <option value="All">All</option>
-               <option value="Shared housing">Shared housing</option>
-               <option value="Apartments">Apartments</option>
-               <option value="Houses">Houses</option>
-               <option value="Cabins">Cabins</option>
-            </select>
+         
+         <div class="main__properties-options">  
+            <section class="main__properties-filter" id="filter-container">   
+               <label for="property-type" class="main__properties-filter-label-title">Property type:</label>
+               
+               <div class="main__properties-filter-item">
+                  <input class="main__properties-filter-input" type="checkbox" id="filter-apartments" name="property-type" value="Apartments">
+                  <label class="main__properties-filter-label" for="filter-apartments">Apartments</label>
+               </div>
+               
+               <div class="main__properties-filter-item">
+                  <input class="main__properties-filter-input" type="checkbox" id="filter-houses" name="property-type" value="Houses">
+                  <label class="main__properties-filter-label" for="filter-houses">Houses</label>
+               </div>
+
+               <div class="main__properties-filter-item">
+                  <input class="main__properties-filter-input" type="checkbox" id="filter-cabins" name="property-type" value="Cabins">
+                  <label class="main__properties-filter-label" for="filter-cabins">Cabins</label>
+               </div>
+
+               <div class="main__properties-filter-item">
+                  <input class="main__properties-filter-input" type="checkbox" id="filter-shared-housing" name="property-type"
+                     value="Shared housing">
+                  <label class="main__properties-filter-label" for="filter-shared-housing">Shared housing</label>
+               </div>
+            </section>
+            
+            <div class="main__properties-sort">
+               <label class="main__properties-sort-label" for="sort-price">Sort:</label>
+               <br>
+               <select id="sort-price">
+                  <option value="low-to-high">Price: Low to High</option>
+                  <option value="high-to-low">Price: High to Low</option>
+               </select>
+            </div>
          </div>
-
-         </section>
-
-         <label for="sort-price">Sort:</label>
-         <select id="sort-price">
-            <option value="low-to-high">Price: Low to High</option>
-            <option value="high-to-low">Price: High to Low</option>
-         </select>
-         <h1 class="main__listings-title">Properties</h1>
+         
+         <h1 class="main__listings-title-properties">Properties</h1>
          <div class="main__properties">
             
          </div>
       </main>
       <footer class="footer"></footer>
    </body>
-
+   
    </html>
