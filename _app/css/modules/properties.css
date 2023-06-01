@@ -155,6 +155,20 @@
    font-weight: bold;
 }
 
+.filter-clear-button {
+   padding: 0.5em 1em;
+   background-color: var(--color-primary);
+   color: white;
+   border: none;
+   border-radius: 0.25em;
+   cursor: pointer;
+   transition: background-color 0.3s;
+}
+
+.filter-clear-button:hover {
+   background-color: var(--color-primary-hover);
+}
+
 /* Media queries */
 @media (max-width: 768px) {
    .main__properties-background-image {

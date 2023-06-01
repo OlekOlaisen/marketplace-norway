@@ -174,6 +174,7 @@ export default async function Properties() {
    if (sortElement) {
       sortElement.addEventListener('change', renderProperties);
    }
+   
 
    // Fetch properties from the database and render them
    await fetchProperties();
