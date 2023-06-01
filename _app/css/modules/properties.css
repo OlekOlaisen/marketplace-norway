@@ -101,6 +101,10 @@
    color: var(--color-primary);
 }
 
+.main__property-favorite:focus {
+   outline: 2px solid #0060df;
+}
+
 .main__favorites-item-location {
    color: var(--color-secondary);
    font-size: var(--font-size-small);

@@ -93,6 +93,10 @@
    cursor: pointer;
 }
 
+.main__jobs-favorite:focus {
+   outline: 2px solid #0060df;
+}
+
 .main__jobs-listing:hover .main__jobs-favorite,
 .main__jobs-listing:hover .main__jobs-favorite.bi-heart-fill {
    color: var(--color-primary);
