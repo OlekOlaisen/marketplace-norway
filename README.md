@@ -8,8 +8,8 @@ The application has the following features:
 ```
 - Browse various market listings.
 - Explore job opportunities.
-- Search for properties based on type (Shared housing, Apartments, Houses, Cabins) and sort them by price.
-- Post new ads to the marketplace (not currently working). New ads are added through sanity studio.
+- Check off properties based on type (Shared housing, Apartments, Houses, Cabins) and sort them by price.
+- Post new ads to the marketplace (not currently working). New ads are added through Sanity.
 - Manage a list of favorite listings.
 ```
   
@@ -20,7 +20,7 @@ The following technologies were used to develop this application:
 - HTML
 - CSS
 - JavaScript
-- Sanity
+- Sanity.io
 ```
 ## Minimum Viable Product (MVP)
 
