@@ -89,3 +89,7 @@ form button[type="submit"]:hover {
 	bottom: -35px;
 	z-index: -1;
 }
+
+.main__newAd-title {
+	text-align: center;
+}
