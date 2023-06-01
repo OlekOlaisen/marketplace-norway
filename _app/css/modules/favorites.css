@@ -127,10 +127,3 @@
    font-family: var(--font-large);
    font-size: var(--font-size-xlarge);
 }
-
-
-@media (max-width: 768px) {
-   .main__favorites-background-image {
-      display: none;
-   }
-}

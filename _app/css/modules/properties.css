@@ -4,7 +4,6 @@
    width: 40%;
    opacity: 0.3;
    right: 0;
-   z-index: -1;
 }
 
 
@@ -99,6 +98,7 @@
 
 .main__favorites-item-location {
    color: var(--color-secondary);
+<<<<<<< HEAD
    font-size: var(--font-size-small);
    text-align: end;
    margin: 0.1rem;
@@ -179,3 +179,9 @@ option:checked {
     
 }
 
+=======
+      font-size: var(--font-size-small);
+      text-align: end;
+      margin: 0.1rem;
+}
+>>>>>>> parent of d82d807 (fixed images on properties)
